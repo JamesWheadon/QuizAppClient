@@ -19,7 +19,14 @@ const questionsReducer = (state=initState, action) => {
                 players: action.payload,
                 error: false
              })
-        
+        case 'UPDATE_PLAYER':
+            const playerToUpdate = state.players.find(p => p.id === action.payload)
+            const playersList = state.players.filter(p => p !== playerToUpdate)
+            const updatedPlayers = [ 
+                ...playersList,
+                { ...playerToUpdate, score: score +1 }
+            ]
+            return ({ ...state, players: updatedPlayers })
         case 'SET_ERROR':
             return { ...state, error: action.payload }
         default:
