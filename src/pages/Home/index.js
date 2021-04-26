@@ -7,6 +7,8 @@ const Home = () => {
             <img className="nav-logo" src="../../images/Quizards-logo.png" alt=""/>
             <div className="welcome-text">
                 <h1>Welcome to Quizards!</h1>
+                {/* <button className="home-button">Start A Quiz</button> */}
+                <button type="button" class="block">Start A Quiz</button>
             </div>
         </div>
     )
