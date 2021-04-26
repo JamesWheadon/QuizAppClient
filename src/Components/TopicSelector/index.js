@@ -31,9 +31,8 @@ const TopicSelector = () => {
                                     <option value="20">20</option>
                                 </select>
                             </div>
-                            
-                    
                 </form>
+                <br></br>
                 <TopicCards />
                 <br></br>
                 <input type="submit"/>

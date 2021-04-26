@@ -23,13 +23,14 @@
     font-weight: bolder;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.596);
     cursor: pointer;
+    font-size: 1.3rem;
   }
   
   #topic-container {
     border-radius: 10px;
     background-color: #f2f2f2;
     padding: 20px;
-    height: 35rem;
+    height: 45rem;
   }
   
   
@@ -50,7 +51,7 @@
       background-color: black;
       color: white;
       border-radius: 12px;
-      
+      font-size: 1rem;
   }
   #questions{
     width: 40%;
@@ -58,4 +59,8 @@
     background-color: black;
     color: white;
     border-radius: 12px;
+    font-size: 1rem;
+}
+.col-25{
+    font-size: 1.3rem;
 }
