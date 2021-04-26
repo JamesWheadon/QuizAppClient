@@ -5,7 +5,6 @@ const StartQuiz = ({ joinRoom }) => {
     return (
         <div>
             Hi
-            {console.log(joinRoom)}
             <UsernameRoom joinRoom={joinRoom} />
         </div>
     )

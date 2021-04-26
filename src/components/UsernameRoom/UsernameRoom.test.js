@@ -7,17 +7,17 @@ describe('UsernameRoom', () => {
 
     beforeEach(() => {
         joinRoom = jest.fn();
-        render(<UsernameRoom getResult={joinRoom}/>);
+        render(<UsernameRoom joinRoom={joinRoom}/>);
     });
 
     test('it renders a form', () => {
         let form = screen.getByRole('form');
-        expect(form).toBeInTheDocument();;
+        expect(form).toBeInTheDocument();
     });
 
-    test('it calls on getResult prop on form submission', () => {
+    test('it calls on joinRoom prop on form submission', () => {
         let submit = screen.getByRole('button');
-        userEvent.click(submit)
+        userEvent.click(submit);
         expect(joinRoom).toHaveBeenCalled();
     })
 });
