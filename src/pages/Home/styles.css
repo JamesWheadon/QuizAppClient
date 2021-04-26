@@ -1,22 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Righteous&family=Shadows+Into+Light&display=swap');
+
 .nav-logo {
     width: 600px;
     height: 600px; 
+    padding-left: 0px; 
 }
 
 body {
     align-items: center;
-    background-color: rgb(37, 212, 212);
+    background-color: #332717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin:0px;
+    padding:0px;
 }
 
 h1 {
     margin-top: 20px;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Righteous;
+    color: #332717;
 }
 
 img {
     align-content: center;
-    position: absolute;
-    left: 470px;
-    top: 50px;
+    position: relative;
+    left: 430px;
+    top: -150px;
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d9a233;
+    width: 840px;
+    padding: 0px;
+    margin: 0px;
+    height: 750px;
+}
+
+.welcome-text {
+    position: relative;
+    top: -200px;
+    left:-460px;
+    text-transform: uppercase;
+    font-size: 2.5rem;
 }
