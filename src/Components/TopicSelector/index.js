@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './style.css'
+import {TopicCards} from "../index"
 
 const TopicSelector = () => {
 
@@ -13,15 +14,16 @@ const TopicSelector = () => {
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
                     </select>
-                    <input type="submit"/>
+                    <br></br>
                     <label htmlFor= "questions">Number of Questions: </label>
                     <select id="questions" name="questions">
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="20">20</option>
                     </select>
+                    <input type="submit"/>
                 </form>
-                
+                <TopicCards />
             </div>
         </>
     )
