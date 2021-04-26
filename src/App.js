@@ -12,6 +12,14 @@ function App() {
 
     const data = { username: "Steve", gameId: "Monkey" };
     socket.emit('request-join-game', data);
+    
+
+    joinGame = e => {
+        e.preventDefault();
+        const { username, room } = e.target;
+        const data = { username: username.value, room: room.value };
+        this.state.socket.emit('request-join-game', data);
+    }
 
     return (
         <div id="app">
@@ -20,7 +28,7 @@ function App() {
                 <Switch>
                     <Route exact path = "/"><Home /></Route>
                     <Route path="/login"><Login /></Route>
-                    <Route path="/startquiz"><StartQuiz /></Route>
+                    <Route path="/startquiz"><StartQuiz joinGame={joinGame}/></Route>
                     <Route path="/highscores"><Highscores /></Route>
                 </Switch>
             </main>

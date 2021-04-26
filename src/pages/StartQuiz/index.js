@@ -1,11 +1,13 @@
 import React from 'react';
+import { UsernameRoom } from '../../components';
 
-const StartQuiz = () => {
+const StartQuiz = ({ joinRoom }) => {
     return (
         <div>
             Hi
+            <UsernameRoom joinRoom={joinRoom} />
         </div>
     )
 }
 
-export default StartQuiz ; 
+export default StartQuiz;
