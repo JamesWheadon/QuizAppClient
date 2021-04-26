@@ -3,8 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 import { NavBar } from './components';
 import { Home, StartQuiz, Login, Highscores } from './pages';
 import { Header, Footer } from './layout';
+import { io } from "socket.io-client";
 
 function App() {
+
+    const socket = io("http://localhost:3000");    
+    socket.on('admin-message', msg => console.log(msg));
+
+    const data = { username: "Steve", gameId: "Monkey" };
+    socket.emit('request-join-game', data);
+
     return (
         <div id="app">
             <NavBar />
