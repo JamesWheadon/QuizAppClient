@@ -1,0 +1,48 @@
+
+nav {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: teal; 
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    }
+
+a { 
+    color: var(--opacity);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a:hover { 
+    font-weight: 800;
+    color: rgb(240, 42, 42);
+}
+
+.active {
+    color: white;
+}
+
+.home-link { color: white; }
+
+.nav-head {
+    width: 820px
+}
+
+.nav-logo {
+    width: 200px;
+    height: 200px;
+}
+
+.nav-links {
+    padding-left: 0px;
+}

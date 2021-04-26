@@ -7,7 +7,6 @@ import { Header, Footer } from './layout';
 function App() {
     return (
         <div id="app">
-            <Header />
             <NavBar />
             <main>
                 <Switch>
