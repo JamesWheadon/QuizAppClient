@@ -1,9 +1,9 @@
 
 nav {
-    width: 100%;
+    width: 815px;
     padding: 0px;
     margin: 0px;
-    background-color: teal; 
+    background-color: #671e14; 
     padding: 25px;
     display: flex;
     justify-content: space-evenly;
@@ -16,7 +16,7 @@ nav {
     }
 
 a { 
-    color: var(--opacity);
+    color: #c2895c;
     text-decoration: none;
     font-size: 1rem;
     text-transform: uppercase;
