@@ -8,7 +8,7 @@ const Home = () => {
             <div className="welcome-text">
                 <h1>Welcome to Quizards!</h1>
                 {/* <button className="home-button">Start A Quiz</button> */}
-                <button type="button" class="block">
+                <button type="button" className="block">
                     <a href="http://localhost:8080/startquiz">Start A Quiz</a>
                 </button>
             </div>
