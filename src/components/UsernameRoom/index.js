@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-function UsernameRoom({ getResult }) {
+function UsernameRoom({ joinRoom }) {
 
     const [username, setUsername] = useState("")
     const [room, setRoom] = useState("")
 
     const handleSubmit = e => {
         e.preventDefault();
-        getResult(location);
+        joinRoom({username: username, room: room});
     }
 
     const updateUsernameInput = e => {
