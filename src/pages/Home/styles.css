@@ -72,3 +72,16 @@ img {
 .block:hover {
     color: white;
 }
+
+/* hr {
+    position: relative;
+    left: 180px;
+    outline-style: solid;
+    color: white;
+    outline-width: 5px;
+} */
+
+.highscore-img {
+    position: relative;
+    left: -00px;
+}
