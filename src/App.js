@@ -9,16 +9,11 @@ function App() {
 
     const socket = io("http://localhost:3000");    
     socket.on('admin-message', msg => console.log(msg));
-
-    const data = { username: "Steve", gameId: "Monkey" };
-    socket.emit('request-join-game', data);
     
 
-    joinGame = e => {
-        e.preventDefault();
-        const { username, room } = e.target;
-        const data = { username: username.value, room: room.value };
-        this.state.socket.emit('request-join-game', data);
+    const joinRoom = (e) => {
+        const data = { username: e.username, room: e.room };
+        socket.emit('request-join-game', data);
     }
 
     return (
@@ -28,7 +23,7 @@ function App() {
                 <Switch>
                     <Route exact path = "/"><Home /></Route>
                     <Route path="/login"><Login /></Route>
-                    <Route path="/startquiz"><StartQuiz joinGame={joinGame}/></Route>
+                    <Route path="/startquiz"><StartQuiz joinRoom={joinRoom}/></Route>
                     <Route path="/highscores"><Highscores /></Route>
                 </Switch>
             </main>

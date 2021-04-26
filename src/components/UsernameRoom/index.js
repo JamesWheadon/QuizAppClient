@@ -29,7 +29,7 @@ function UsernameRoom({ joinRoom }) {
             <label>Room code:
                 <input type="text" value={room} onChange={updateRoomInput} />
             </label>
-            <button type="submit" value="Join Room" />
+            <button type="submit">Join Room</button>
         </form>
     );
 };
