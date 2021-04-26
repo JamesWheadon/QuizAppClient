@@ -3,6 +3,7 @@ import axios from 'axios';
 const error = (err) => ({ type: 'SET_ERROR', payload: err.message });
 
 export const addPlayers = players => ( dispatch({ type: 'LOADING', payload: players }));
+export const updatePlayerScore = playerId => (dispatch({ type: 'UPDATE_PLAYER', payload: playerId }))
 
 
 export const fetchQuestions = (amount, category, difficulty) => {
