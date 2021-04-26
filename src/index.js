@@ -4,6 +4,8 @@ import { io } from "socket.io-client";
 
 const socket = io("http://localhost:3000");
 
+socket.on('admin-message', msg => console.log(msg));
+
 
 ReactDOM.render(
     <React.StrictMode>
