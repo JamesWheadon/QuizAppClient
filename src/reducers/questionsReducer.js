@@ -1,7 +1,7 @@
 const initState = {
     category: "",
     questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
-    players: [],
+    players: {},
     loading: false
 }
 
@@ -20,9 +20,9 @@ const questionsReducer = (state=initState, action) => {
                 error: false
              })
         case 'UPDATE_PLAYER':
-            const playerToUpdate = state.players.find(p => p.id === action.payload)
+            const playerToUpdate = state.players.find(p => p.id === action.payload.playerId)
             const updatedPlayers = state.players.filter(p => p !== playerToUpdate)
-            updatedPlayers.push({ ...playerToUpdate, score: score +1 })
+            updatedPlayers.push({ ...playerToUpdate, score: action.payload.score })
             return ({ ...state, players: updatedPlayers })
         case 'SET_ERROR':
             return { ...state, error: action.payload }
