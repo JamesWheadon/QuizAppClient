@@ -6,7 +6,7 @@ describe('QuizQuestion', () => {
     let submitAnswer;
     beforeEach(() => {
         submitAnswer = jest.fn();
-        render(<QuizAnswer question={"Is react good?"} wrongAnswers={['no', 'hell no', 'really no']} correctAnswer={'yes'} submitAnswer={submitAnswer}/>);
+        render(<QuizQuestion question={"Is react good?"} wrongAnswers={['no', 'hell no', 'really no']} correctAnswer={'yes'} submitAnswer={submitAnswer}/>);
     });
 
     test('it renders a heading and 4 buttons for the answers', () => {
@@ -15,7 +15,6 @@ describe('QuizQuestion', () => {
         expect(question).toBeInTheDocument();
         expect(question.textContent).toBe('Is react good?')
         expect(answers.length).toBe(4);
-        expect(answer.textContent).toBe('True');
     });
 
     test('it calls submitAnswer on button click', () => {
