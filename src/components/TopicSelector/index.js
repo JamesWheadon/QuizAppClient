@@ -1,12 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import './style.css'
 import { TopicCard } from "../index"
 
-const TopicSelector = () => {
-    const handleSubmit = event => {
-        event.preventDefault()
+import { fetchQuestions } from "../../actions";
+
+const TopicSelector = ({ handleFormSubmit }) => {
+
+    const [input, setInput] = useState(
+        {
+            difficulty: 'Easy',
+            length: 10,
+            category: 11
+        }
+    );
+
+    // const [selectTopic, setSelectTopic] = useState("");
+
+    const handleTopicSelection = (selectedTopic) => {
+        setInput(prev => ({
+            ...prev,
+            category: selectedTopic
+        }))
     }
-    const [selectTopic, setSelectTopic]= useState("");
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        handleFormSubmit(input);
+        setInput({
+            difficulty: "",
+            length: "",
+            category: ""
+        });
+    }
+
+    const handleChange = e => {
+        setInput(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }))
+    }
 
 
     const topics = [
@@ -34,12 +66,12 @@ const TopicSelector = () => {
         },
         {
             id: "27",
-            name:"Animals",
-            image:"https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+            name: "Animals",
+            image: "https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
         }
     ]
     const topicsList = topics.map(topic => {
-        return (<TopicCard key= {topic.id} topic={topic} selectCard={setSelectTopic} />
+        return (<TopicCard key={topic.id} topic={topic} selectCard={handleTopicSelection} />
         )
     })
     return (
@@ -50,28 +82,26 @@ const TopicSelector = () => {
                         <label htmlFor="difficulties">Select Difficulty:</label>
                     </div>
                     <div className="options">
-                        <select id="difficulties" name="difficulties">
+                        <select id="difficulties" name="difficulty"
+                            value={input.difficulty} onChange={handleChange}>
                             <option value="Easy">Easy</option>
                             <option value="Medium">Medium</option>
                             <option value="Hard">Hard</option>
                         </select>
                     </div>
-
-
-                    <br></br>
                     <div className="col-25">
                         <label htmlFor="questions">Number of Questions:</label>
                     </div>
                     <div className="options">
-                        <select id="questions" name="questions">
-                            <option value="5">5</option>
+                        <select id="questions" name="length"
+                            value={input.length} onChange={handleChange}>
+                            <option value="5" >5</option>
                             <option value="10">10</option>
                             <option value="20">20</option>
-
                         </select>
                     </div>
                     {topicsList}
-                    <input type="submit" />
+                    <input type="submit" value="Start Quiz" />
                 </form>
             </div>
         </>
