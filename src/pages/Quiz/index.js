@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { QuizQuestion } from '../../components';
 
-const Quiz = ({ questions }) => {
+const Quiz = () => {
 
     const [questionNumber, setQuestionNumber] = useState(0);
     const [score, setScore] = useState(0);

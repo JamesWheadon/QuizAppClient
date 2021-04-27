@@ -28,54 +28,6 @@ function App() {
         setMessages(copy);
     });
 
-    const questions = [
-        {
-        question: "When was the Declaration of Independence approved by the Second Continental Congress?",
-        correct_answer: "July 4, 1776",
-        incorrect_answers: [
-        "May 4, 1776",
-        "June 4, 1776",
-        "July 2, 1776"
-        ]
-        },
-        {
-        question: "In what sport is a &quot;shuttlecock&quot; used?",
-        correct_answer: "Badminton",
-        incorrect_answers: [
-        "Table Tennis",
-        "Rugby",
-        "Cricket"
-        ]
-        },
-        {
-        question: "Which of the following buildings is example of a structure primarily built in the Art Deco architectural style?",
-        correct_answer: "Niagara Mohawk Building",
-        incorrect_answers: [
-        "Taipei 101",
-        "One Detroit Center",
-        "Westendstrasse 1"
-        ]
-        },
-        {
-        question: "What Greek letter is used to signify summation?",
-        correct_answer: "Sigma",
-        incorrect_answers: [
-        "Delta",
-        "Alpha",
-        "Omega"
-        ]
-        },
-        {
-        question: "How many total monsters appear in Monster Hunter Generations?",
-        correct_answer: "105",
-        incorrect_answers: [
-        "100",
-        "98",
-        "73"
-        ]
-        }
-        ]
-
     return (
         <div id="app">
             <NavBar />
@@ -85,7 +37,7 @@ function App() {
                     <Route path="/login"><Login /></Route>
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages}/></Route>
                     <Route path="/highscores"><Highscores /></Route>
-                    <Route path="/quiz"><Quiz questions={questions}/></Route>
+                    <Route path="/quiz"><Quiz /></Route>
                 </Switch>
             </main>
             <Footer />
