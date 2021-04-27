@@ -14,6 +14,7 @@ function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
         );
     };
 
+    // Durstenfeld shuffle
     const shuffle = (answers) => {
         for (let x = answers.length - 1; x > 0; x--) {
             const y = Math.floor(Math.random() * (x + 1));
