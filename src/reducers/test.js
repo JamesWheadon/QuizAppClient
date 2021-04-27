@@ -15,33 +15,19 @@ describe('questions reducer', () => {
                                         error: false })
     })
 
+    test('it returns with updates score when a play score is updated', () => {
+        const fakeUpdate = questionsReducer(undefined, { type: 'UPDATE_SCORE' } )
+        expect(fakeUpdate.user).toMatchObject({name: "", id: 0, score: 1, highscore: 0 })
+    })
 
-    // test('it returns with updated array when a dog is liked', () => {
-    //     const fakeLike = doggoReducer(
-    //                         { doggos: [
-    //                             { id: 1, liked: false },
-    //                             { id: 2, liked: false }
-    //                         ] },
-    //                         { type: 'TOGGLE_LIKE_DOGGO', payload: 1}
-    //                     )
-    //     expect(fakeLike).toMatchObject({ doggos: [
-    //                             { id: 1, liked: true },
-    //                             { id: 2, liked: false }
-    //                         ]})
-    // })
+    test('it returns with question array', () => {
+        let quiz= 1
+        let questions = [ {question: "dummy", correct_answer: "aha", incorrect_answers :["blaa"] } ]
+        const fakeLoadQuestions = questionsReducer(
+            {questions: [ {question: "", correct_answer: "", incorrect_answers :[]}] } ,
+            { type: 'LOAD_QUESTIONS', payload: {questions, quiz}  })
+        expect(fakeLoadQuestions.questions).toMatchObject([{question: "dummy", correct_answer: "aha", incorrect_answers :["blaa"]}])
+    })
 
-    // test('it returns with updated array when a dog is deleted', () => {
-    //     const fakeDelete = doggoReducer(
-    //                         { doggos: [
-    //                             { id: 1, liked: false },
-    //                             { id: 2, liked: false }
-    //                         ] },
-    //                         { type: 'DELETE_DOGGO', payload: 1}
-    //                     )
-    //     expect(fakeDelete).toMatchObject({
-    //                         doggos: [
-    //                             { id: 2, liked: false }
-    //                         ]
-    //                     })
-    // })
+
 });
