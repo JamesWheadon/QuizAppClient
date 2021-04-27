@@ -1,5 +1,5 @@
 import React from 'react';
-import { UsernameRoom, RoomUser } from '../../components';
+import { UsernameRoom, RoomUser, RoomChat } from '../../components';
 
 const StartQuiz = ({ joinRoom, users }) => {
 
@@ -15,6 +15,7 @@ const StartQuiz = ({ joinRoom, users }) => {
             Hi
             <UsernameRoom joinRoom={joinRoom} />
             {renderUsers()}
+            <RoomChat />
         </div>
     )
 }

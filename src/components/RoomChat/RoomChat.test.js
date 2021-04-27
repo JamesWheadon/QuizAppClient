@@ -2,8 +2,10 @@ import { default as RoomChat } from '.';
 import { render, screen } from '@testing-library/react';
 
 describe('RoomChat', () => {
+    let sendMessage;
     beforeEach(() => {
-        render(<RoomChat messages={[{username: "Steve", message: "Can"}]}/>);
+        sendMessage = jest.fn();
+        render(<RoomChat sendMessage={sendMessage} messages={[{username: "Steve", message: "Can"}]}/>);
     });
 
     test('it calls ChatMessage with username Steve and message Can', () => {
@@ -11,4 +13,15 @@ describe('RoomChat', () => {
         expect(message).toBeInTheDocument();
         expect(message.textContent).toBe('Steve: Can');
     });
+
+    test('it renders a form to allow users to send a message', () => {
+        let form = screen.getByRole('form');
+        expect(form).toBeInTheDocument();
+    })
+
+    test('it calls sendMessage on submit', () => {
+        let submit = screen.getByRole('button');
+        userEvent.click(submit);
+        expect(sendMessage).toHaveBeenCalled();
+    })
 });
