@@ -1,0 +1,11 @@
+.highscores-table {
+    width: 550px;
+    color: white;
+    row-gap: 300px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.table-input {
+    margin-bottom: 50px;
+}

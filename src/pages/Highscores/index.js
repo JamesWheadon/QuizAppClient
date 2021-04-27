@@ -1,40 +1,43 @@
-import React from 'react';
-import "./styles.css"
+import React, { useEffect, useState } from 'react';
+import "./styles.css";
+import axios from "axios";
+
+import { Leaderboard } from "../../components";
 
 const Highscores = () => {
+
+    const [userData, setUserData] = useState("");
+
+    useEffect(() => {
+        async function getUserData() {
+            try {
+                const { data } = await axios.get(
+                    `http://localhost:3000/users`
+                )
+                setUserData(data)
+            } catch {
+                setUserData();
+            }
+        }
+        getUserData()
+    }, []);
+
+    const handleUsers = (event) => {
+        event.preventDefault();
+    }
     return (
         <div className="home-container">
             <div className="highscores-container">
-                <div className="highscores-text">
-                    Leaderboard
-                </div>
-                <br/>
-                <br/>
-                <div className="highscores-point">
-                    <table className="highscores-table">
-                        <tbody>
-                            <tr className="table-input">
-                                <th>Nickname</th>
-                                <th>Score</th>
-                                <th>Icon</th>
-                            </tr>
-                            <tr>
-                                <td>Bob</td>
-                                <td>50</td>
-                                <td>whale</td>
-                            </tr>
-                            <tr>
-                                <td>Sob</td>
-                                <td>20</td>
-                                <td>pig</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <img className="highscore-img" src="../../images/wizard-two.png" alt=""/>
+                <br />
+                <br />
+                {userData 
+                ? <Leaderboard data={userData} /> 
+                : <div><p>Oops, no highscores yet!</p></div>
+                }
+                <img className="highscore-img" src="../../images/wizard-two.png" alt="wizard" />
             </div>
         </div>
     )
 }
 
-export default Highscores ; 
+export default Highscores;
