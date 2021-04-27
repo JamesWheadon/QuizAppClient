@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import './style.css'
-import {ScienceCard, SportsCard, BookCard, FilmCard} from "../index"
+import {TopicCards} from "../index"
 
 const TopicSelector = () => {
+    const handleSubmit = event => {
+        event.preventDefault()
+    }
 
     return (
         <>
             <div id="topic-container">
-                <form action="" method="get">
+                <form action="" method="get" onSubmit={handleSubmit}>
                     <div class="col-25">
                         <label htmlFor= "difficulties">Select Difficulty:</label>
                     </div>
@@ -34,10 +37,7 @@ const TopicSelector = () => {
                             </div>
                             
                     <br></br>
-                    <FilmCard />
-                    <ScienceCard />
-                    <SportsCard />
-                    <BookCard />
+                    <TopicCards />
                     
                 <input type="submit"/>
                 </form>

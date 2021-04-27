@@ -1,5 +1,4 @@
 export {default as TopicSelector} from './TopicSelector'
-export {default as BookCard} from './BookCard'
-export {default as FilmCard} from './FilmCard'
-export {default as ScienceCard} from './ScienceCard'
-export {default as SportsCard} from './SportsCard'
+export {default as TopicCards} from './TopicCard'
+
+
