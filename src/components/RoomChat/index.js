@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ChatMessage } from '..'
+import { ChatMessage } from '..';
+import './style.css';
 
 function RoomChat({ sendMessage, messages }) {
 
