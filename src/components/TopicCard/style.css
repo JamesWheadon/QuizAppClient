@@ -1,20 +1,12 @@
-.topics-img{
-    height: 15rem;
-    width: 19.5rem;
-    border-radius: 15px;
-    cursor: pointer;
-}
-.col-25{
-    font-size: 1.3rem;
-}
-* {
-  box-sizing: border-box;
+.topic-card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 300px;
 }
 
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-
+.topic-card  img {
+  max-width: 100%;
+  border-radius: 15px;
 }
+
