@@ -39,17 +39,17 @@ const TopicSelector = () => {
         }
     ]
     const topicsList = topics.map(topic => {
-        return (<TopicCard topic={topic} selectCard={setSelectTopic} />
+        return (<TopicCard key= {topic.id} topic={topic} selectCard={setSelectTopic} />
         )
     })
     return (
         <>
             <div id="topic-container">
                 <form action="" method="get" onSubmit={handleSubmit}>
-                    <div class="col-25">
+                    <div className="col-25">
                         <label htmlFor="difficulties">Select Difficulty:</label>
                     </div>
-                    <div class="options">
+                    <div className="options">
                         <select id="difficulties" name="difficulties">
                             <option value="Easy">Easy</option>
                             <option value="Medium">Medium</option>
@@ -59,10 +59,10 @@ const TopicSelector = () => {
 
 
                     <br></br>
-                    <div class="col-25">
+                    <div className="col-25">
                         <label htmlFor="questions">Number of Questions:</label>
                     </div>
-                    <div class="options">
+                    <div className="options">
                         <select id="questions" name="questions">
                             <option value="5">5</option>
                             <option value="10">10</option>
