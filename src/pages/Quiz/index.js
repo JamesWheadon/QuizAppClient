@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import { QuizQuestion } from '../../components';
+import { updatePlayerScore } from "../../actions";
 
 const Quiz = () => {
 
     const [questionNumber, setQuestionNumber] = useState(0);
     const [score, setScore] = useState(0);
+
+    const dispatch = useDispatch();
+
+    const questions = useSelector(state => state.questions);
 
     const renderResults = () => {
         console.log(score);
@@ -12,6 +18,7 @@ const Quiz = () => {
     
     const submitAnswer = (e) => {
         if (e.target.value) {
+            dispatch(updatePlayerScore());
             setScore(prevState => prevState + 1);
         }
         if (questionNumber != questions.length - 1) {
