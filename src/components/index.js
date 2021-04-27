@@ -7,3 +7,5 @@ export { default as NavBar } from './NavBar';
 export { default as RoomChat } from './RoomChat';
 export { default as TopicCard } from './TopicCard';
 export { default as QuizForm } from './QuizForm';
+export { default as QuizAnswer } from './QuizAnswer';
+export { default as QuizQuestion } from './QuizQuestion';
