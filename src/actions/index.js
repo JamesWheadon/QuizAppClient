@@ -4,23 +4,25 @@ import axios from 'axios';
 const API_URL = process.node.API_URL
 
 const error = (err) => ({ type: 'SET_ERROR', payload: err.message });
+const setUser = (name, id, highscore) => ( { type: 'LOAD_USER', payload: { name, id, highscore, score: 0 } } );
+
+export const setPlayer1 = () => ( { type: 'SET_PLAYER1', payload: { player1: true } } );
+export const updatePlayerScore = (score) => ({ type: 'UPDATE_SCORE', payload: score })
 
 
-export const updatePlayerScore = (playerId, score) => (dispatch({ type: 'UPDATE_PLAYER', payload: {playerId, score} }))
-export const setPlayer = (name, id) => ( { type: 'LOADING', payload: { name,id } } );
 
 
-
-export const addPlayer = (username) => {
+export const addUser = (username) => {
     return async (dispatch) => {
         try {
             let { data } = await axios.post(`${API_URL}/users/`, { name: username })
-            let {name, id } = data
-            dispatch(setPlayer(name,id))
+            let {name, id, highscore } = data
+            dispatch(setUser(name, id, highscore))
         } catch (err) {
             try {
              let { data } = await axios.get(`${API_URL}/users/${username}`)
-             dispatch(setPlayer(name,id))
+             let {name, id, highscore } = data
+             dispatch(setUser(name, id, highscore))
 
             } catch (err) {
             dispatch(error(err));
@@ -30,18 +32,33 @@ export const addPlayer = (username) => {
 }
 
 
-export const fetchQuestions = () => {
+export const fetchQuestions = (data) => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.get(`${API_URL}/`)
-            let newQuestionsArray = data.results.map( ({ question, correct_answer, incorrect_answers }) => ({ question, correct_answer, incorrect_answers  }))
+            const { data } = await axios.post(`${API_URL}/quiz`, data )
+            let {quiz_id, id, category, difficulty,length} = data
+            let questions = data.questions.map( ({ question, correct_answer, incorrect_answers }) => ({ question, correct_answer, incorrect_answers  }))
             dispatch({
                 type: 'LOAD_QUESTIONS',
-                payload: newQuestionsArray
+                payload: {questions, quiz_id, id, category, difficulty, length}
             })
         } catch (err) {
             dispatch(error(err));
         }
     }
 }
+
+// export const addPlayers = () => {
+//     return async (dispatch) => {
+//         try {
+//             let { data } = await axios.get(`${API_URL}/`)
+//             let {players } = data
+//             dispatch({ type: 'SET_PLAYER1', payload: players })
+//         } catch (err) {
+            
+//             dispatch(error(err));
+        
+//         }
+//     }
+// }
 
