@@ -1,9 +1,23 @@
-import React from 'react';
-import "./styles.css"
+import React, { useState } from 'react';
+import "./styles.css";
+import axios from "axios";
 
 const Highscores = () => {
+    const [userData, setUserData] = useState("");
+
+    const handleUsers = (event) => {
+        event.preventDefault();
+    }
+
+    async function getUserData() {
+        const { data } = await axios.get(
+            `http://localhost:3000/users`
+        )
+        setUserData(data)
+    }
+
     return (
-        <div className="home-container">
+        <div className="home-container" onload={getUserData}>
             <div className="highscores-container">
                 <div className="highscores-text">
                     Leaderboard
@@ -18,16 +32,12 @@ const Highscores = () => {
                                 <th>Score</th>
                                 <th>Icon</th>
                             </tr>
-                            <tr>
-                                <td>Bob</td>
-                                <td>50</td>
-                                <td>whale</td>
-                            </tr>
-                            <tr>
-                                <td>Sob</td>
-                                <td>20</td>
-                                <td>pig</td>
-                            </tr>
+                            {userData ? userData.map((g) => (
+                                <tr>
+                                    <td>{g.name}</td>
+                                    <td>{g.highscore}</td>
+                                    <td>whale</td>
+                                </tr>)) : "" }
                         </tbody>
                     </table>
                 </div>
