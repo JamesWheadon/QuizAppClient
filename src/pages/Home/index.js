@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css'
 
 const Home = () => {
+    
     return (
         <div className="home-container">
             <img className="nav-logo" src="../../images/Quizards-logo.png" alt=""/>

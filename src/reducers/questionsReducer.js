@@ -1,7 +1,7 @@
 const initState = {
     category: "",
     questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
-    quiz_id: "",
+    quiz: {},
     user: {name: "", id: 0, score: 0, highscore: 0 },
     players: [],
     player1: false,
@@ -14,7 +14,7 @@ const questionsReducer = (state=initState, action) => {
             return ({
                 ...state,
                 questions: action.payload.questions,
-                quiz_id: action.payload.quiz_id,
+                quiz: action.payload.quiz,
                 error: false
              })
         case 'LOAD_USER':
@@ -30,9 +30,10 @@ const questionsReducer = (state=initState, action) => {
                 error: false
              })
         case 'UPDATE_SCORE':
+            const newScore = 1+ state.user.score
             return ({
                  ...state, 
-                 user: {...user, score: action.payload}
+                 user: {...state.user, score: newScore}
             })
         case 'SET_PLAYER1':
             return { ...state, player1: action.payload }
