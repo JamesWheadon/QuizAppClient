@@ -5,13 +5,12 @@ import { Home, StartQuiz, Login, Highscores } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
+const socket = io("http://localhost:3000");
+
 function App() {
     const [users, setUsers] = useState([])
     const [messages, setMessages] = useState([])
-
-    const socket = io("http://localhost:3000");
     socket.on('admin-message', msg => console.log(msg));
-    
 
     const joinRoom = (e) => {
         const data = { username: e.username, room: e.room };
@@ -23,7 +22,11 @@ function App() {
     }
 
     socket.on('all-players', data => setUsers(data.roomUsernames));
-    socket.on('new-chat-message', m => setMessages(messages.push(m)));
+    socket.on('new-chat-message', m => {
+        let copy = [...messages];
+        copy.push(m);
+        setMessages(copy);
+    });
 
     return (
         <div id="app">
