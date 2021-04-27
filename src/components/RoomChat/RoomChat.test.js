@@ -17,11 +17,17 @@ describe('RoomChat', () => {
     test('it renders a form to allow users to send a message', () => {
         let form = screen.getByRole('form');
         expect(form).toBeInTheDocument();
-    })
+    });
+
+    test('it updates the message state when text is input', () => {
+        let messageInput = screen.getByLabelText('Chat:');
+        userEvent.type(messageInput, 'hello');
+        expect(messageInput.value).toBe('hello');
+    });
 
     test('it calls sendMessage on submit', () => {
         let submit = screen.getByRole('button');
         userEvent.click(submit);
         expect(sendMessage).toHaveBeenCalled();
-    })
+    });
 });

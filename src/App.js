@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { NavBar } from './components';
-import { Home, StartQuiz, Login, Highscores } from './pages';
+import { Home, StartQuiz, Login, Highscores, Quiz } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
@@ -37,6 +37,7 @@ function App() {
                     <Route path="/login"><Login /></Route>
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages}/></Route>
                     <Route path="/highscores"><Highscores /></Route>
+                    <Route path="/quiz"><Quiz /></Route>
                 </Switch>
             </main>
             <Footer />
