@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './App'
 
 import store from './store';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <h1>Welcome to Quizards</h1>
-    </React.StrictMode>,
+    <Router>
+        <App />
+    </Router>,
     document.getElementById('root')
 );
