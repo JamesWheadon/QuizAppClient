@@ -4,7 +4,7 @@ import { TopicCard } from "../index"
 
 import { fetchQuestions } from "../../actions";
 
-const TopicSelector = ({ handleFormSubmit }) => {
+const QuizForm = ({ handleFormSubmit }) => {
 
     const [input, setInput] = useState(
         {
@@ -75,36 +75,35 @@ const TopicSelector = ({ handleFormSubmit }) => {
         )
     })
     return (
-        <>
-            <div id="topic-container">
-                <form action="" method="get" onSubmit={handleSubmit}>
-                    <div className="col-25">
-                        <label htmlFor="difficulties">Select Difficulty:</label>
-                    </div>
-                    <div className="options">
-                        <select id="difficulties" name="difficulty"
-                            value={input.difficulty} onChange={handleChange}>
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Hard">Hard</option>
-                        </select>
-                    </div>
-                    <div className="col-25">
-                        <label htmlFor="questions">Number of Questions:</label>
-                    </div>
-                    <div className="options">
-                        <select id="questions" name="length"
-                            value={input.length} onChange={handleChange}>
-                            <option value="5" >5</option>
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                        </select>
-                    </div>
-                    {topicsList}
-                    <input type="submit" value="Start Quiz" />
-                </form>
+        <form id="quiz-form" action="" method="get" onSubmit={handleSubmit}>
+            <div className="col-25">
+                <label htmlFor="difficulties">Select Difficulty:</label>
             </div>
-        </>
+            <div className="options">
+                <select id="difficulties" name="difficulty"
+                    value={input.difficulty} onChange={handleChange}>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+            <div className="col-25">
+                <label htmlFor="questions">Number of Questions:</label>
+            </div>
+            <div className="options">
+                <select id="questions" name="length"
+                    value={input.length} onChange={handleChange}>
+                    <option value="5" >5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <div id="topic-container">
+                {topicsList}
+            </div>
+
+            <input type="submit" value="Start Quiz" />
+        </form>
     )
 
 };
@@ -113,4 +112,4 @@ const TopicSelector = ({ handleFormSubmit }) => {
 
 
 
-export default TopicSelector;
+export default QuizForm;
