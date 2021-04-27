@@ -9,12 +9,20 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
         );
     };
 
+    const renderRoom =() => {
+        return (
+            <>
+            {renderUsers()}
+            <RoomChat sendMessage={sendMessage} messages={messages}/>
+            </>
+        )
+    }
+
     return (
         <div>
             Hi
-            <UsernameRoom joinRoom={joinRoom} />
-            {renderUsers()}
-            <RoomChat sendMessage={sendMessage} messages={messages}/>
+            {users.length === 0 ? <UsernameRoom joinRoom={joinRoom} /> : renderRoom()
+            }
         </div>
     )
 }

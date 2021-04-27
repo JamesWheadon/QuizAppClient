@@ -15,6 +15,7 @@ function RoomChat({ sendMessage, messages }) {
     const handleSubmit = e => {
         e.preventDefault();
         sendMessage(chatMessage);
+        setChatMessage('');
     }
 
     const updateMessageInput = e => {
