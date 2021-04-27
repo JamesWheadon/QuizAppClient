@@ -7,6 +7,7 @@ import { io } from "socket.io-client";
 
 function App() {
     const [users, setUsers] = useState([])
+    const [messages, setMessages] = useState([])
 
     const socket = io("http://localhost:3000");
     socket.on('admin-message', msg => console.log(msg));
@@ -17,7 +18,12 @@ function App() {
         socket.emit('request-join-game', data);
     }
 
+    const sendMessage = (message) => {
+        socket.emit('chat-message', message);
+    }
+
     socket.on('all-players', data => setUsers(data.roomUsernames));
+    socket.on('new-chat-message', m => setMessages(messages.push(m)));
 
     return (
         <div id="app">
@@ -26,7 +32,7 @@ function App() {
                 <Switch>
                     <Route exact path = "/"><Home /></Route>
                     <Route path="/login"><Login /></Route>
-                    <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} users={users}/></Route>
+                    <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages}/></Route>
                     <Route path="/highscores"><Highscores /></Route>
                 </Switch>
             </main>

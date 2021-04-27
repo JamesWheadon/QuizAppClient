@@ -1,10 +1,9 @@
 import React from 'react';
 import { UsernameRoom, RoomUser, RoomChat } from '../../components';
 
-const StartQuiz = ({ joinRoom, users }) => {
+const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
 
     const renderUsers = () => {
-        console.log(users)
         return users.map(user => 
             <RoomUser username={user} key={users.indexOf(user)}/>
         );
@@ -15,7 +14,7 @@ const StartQuiz = ({ joinRoom, users }) => {
             Hi
             <UsernameRoom joinRoom={joinRoom} />
             {renderUsers()}
-            <RoomChat />
+            <RoomChat sendMessage={sendMessage} messages={messages}/>
         </div>
     )
 }
