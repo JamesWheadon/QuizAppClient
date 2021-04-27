@@ -1,0 +1,38 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d9a233;
+    width: 840px;
+    padding: 0px;
+    margin: 0px;
+    height: 750px;
+}
+
+.highscores-container {
+    position: relative;
+    height: 500px;
+    width: 600px;
+    top: -50px;
+    background-color: #671e14;
+    border-radius: 5%;
+}
+
+.highscores-text {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.highscores-table {
+    width: 550px;
+    color: white;
+    row-gap: 300px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.table-input {
+    margin-bottom: 50px;
+}
