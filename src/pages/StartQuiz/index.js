@@ -1,5 +1,5 @@
 import React from 'react';
-import { UsernameRoom, RoomUser, RoomChat } from '../../components';
+import { UsernameRoom, RoomUser, RoomChat, TopicSelector } from '../../components';
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
 
@@ -14,6 +14,7 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
             <>
             {renderUsers()}
             <RoomChat sendMessage={sendMessage} messages={messages}/>
+            <TopicSelector />
             </>
         )
     }
