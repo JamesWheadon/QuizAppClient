@@ -10,18 +10,22 @@ const Highscores = () => {
     }
 
     async function getUserData() {
-        const { data } = await axios.get(
-            `http://localhost:3000/users`
-        )
-        setUserData(data)
+        try {
+            const { data } = await axios.get(
+                `http://localhost:3000/users`
+            )
+            setUserData(data)
+        } catch {
+            return (
+                <div>Oops, no highscores yet!</div>
+            )
+        }
     }
 
     return (
-        <div className="home-container" onload={getUserData}>
+        <div className="home-container" onLoad={getUserData}>
             <div className="highscores-container">
-                <div className="highscores-text">
-                    Leaderboard
-                </div>
+                <div className="highscores-text">Leaderboard</div>
                 <br/>
                 <br/>
                 <div className="highscores-point">
