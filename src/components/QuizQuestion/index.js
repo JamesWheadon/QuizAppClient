@@ -1,6 +1,5 @@
 import React from 'react';
 import { QuizAnswer } from '..';
-import './style.css';
 
 function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
 

@@ -7,3 +7,4 @@ export { default as TopicCard } from './TopicCard';
 export { default as TopicSelector } from './TopicSelector';
 export { default as UsernameRoom } from './UsernameRoom';
 export { default as QuizAnswer } from './QuizAnswer';
+export { default as QuizQuestion } from './QuizQuestion';
