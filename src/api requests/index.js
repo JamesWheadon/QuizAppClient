@@ -1,11 +1,16 @@
 import axios from 'axios';
 
 
-export const sendScore = ( name, score) => {
+export const sendScore = async (id, name, score) => {
         try {
-            await axios.post(`${API_URL}/users/${name}`, { highscore: score })
+            console.log(name)
+            let data = await axios.put(`http://localhost:3000/quizzes/${id}/users/${name}`, { highscore: score })
+
+            console.log(data)
         } catch (err) {
-            console.warn(err)
+            console.warn(err.message)
         }
+
 }
+
 
