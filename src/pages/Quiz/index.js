@@ -10,11 +10,11 @@ const Quiz = ({ questions }) => {
         console.log(score);
     }
     
-    const submitAnswer = (correct) => {
-        if (correct) {
+    const submitAnswer = (e) => {
+        if (e.target.value) {
             setScore(prevState => prevState + 1);
         }
-        if (questionNumber == questions.length - 1) {
+        if (questionNumber != questions.length - 1) {
             setQuestionNumber(prevState => prevState + 1);
         }
         else {
