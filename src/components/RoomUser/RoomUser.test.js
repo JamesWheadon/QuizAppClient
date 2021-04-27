@@ -1,6 +1,5 @@
 import { default as RoomUser } from '.';
 import { screen, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 describe('RoomUser', () => {
 

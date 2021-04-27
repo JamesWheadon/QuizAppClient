@@ -1,20 +1,28 @@
 import React from 'react';
-import { UsernameRoom, RoomUser } from '../../components';
+import { UsernameRoom, RoomUser, RoomChat } from '../../components';
 
-const StartQuiz = ({ joinRoom, users }) => {
+const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
 
     const renderUsers = () => {
-        console.log(users)
         return users.map(user => 
             <RoomUser username={user} key={users.indexOf(user)}/>
         );
     };
 
+    const renderRoom =() => {
+        return (
+            <>
+            {renderUsers()}
+            <RoomChat sendMessage={sendMessage} messages={messages}/>
+            </>
+        )
+    }
+
     return (
         <div>
             Hi
-            <UsernameRoom joinRoom={joinRoom} />
-            {renderUsers()}
+            {users.length === 0 ? <UsernameRoom joinRoom={joinRoom} /> : renderRoom()
+            }
         </div>
     )
 }
