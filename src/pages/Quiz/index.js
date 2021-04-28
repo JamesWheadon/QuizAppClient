@@ -17,7 +17,7 @@ const Quiz = () => {
     }
     
     const submitAnswer = (e) => {
-        if (e.target.value) {
+        if (e.target.value === "true") {
             dispatch(updatePlayerScore());
             setScore(prevState => prevState + 1);
         }
