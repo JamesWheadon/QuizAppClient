@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1024px) {
+    .room-form{
+        font-size: 1.8rem;
+        width: 100%;
+    }
+    .icon-card {
+        position: relative;
+        text-align: center;
+        width: 7rem;
+        height: 7rem;
+      }
+      .icon-img:hover {
+        width: 9rem;
+        height: 9rem;
+        object-fit: cover;
+        cursor: pointer;
+      }
+      #icon-container {
+        display: flex;
+        flex-flow: column;
+        max-width: 80vw;
+        flex-flow: row wrap;
+        justify-content: center;
+        border-radius: 10px;
+        width: 100%;
+      }
+      #back-button {
+      left: 40%;
+      }
+      body{
+          width:100%;
+      }
+      form input[type=text] {
+          font-size: 1.2rem;
+          width: 11.2rem;
+      }
+      form button[type=submit] {
+          margin-left: 45%;
+      }
+     
+}
