@@ -40,7 +40,7 @@ function App() {
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages}/></Route>
                     <Route path="/highscores"><Highscores /></Route>
                     <Route path="/quiz"><Quiz /></Route>
-                    <Route path="/winners"><WinnersPage  id={quizId}/></Route>
+                    <Route path="/winners"><WinnersPage /></Route>
                 </Switch>
             </main>
             <Footer />

@@ -1,26 +1,25 @@
-import React, {UseEffect, UseState} from 'react';
+import React, {UseEffect, UseState, UseSelector} from 'react';
 import axios from "axios";
 
 import { Leaderboard } from "../../components";
 
-const WinnersPage = (quizIds) => {
+const WinnersPage = () => {
 
     const [userData, setUserData] = useState("");
 
     useEffect(() => {
         async function getUserData() {
             try {
-                const { data } = await axios.get(
-                    `http://localhost:3000/users`
-                )
-                filteredData = data.filter(quizIds)
-                setUserData(filteredData)
+                // const lobbyData = useSelector(state => state.quiz.quiz_id)  // quiz_id
+                const playersData = useSelector(state => state.players)  // quiz_id, id, scores
+                setUserData(playersData)
             } catch {
                 setUserData();
             }
         }
         getUserData()
     }, []);
+
 
     return (
         <div className="home-container">
@@ -31,7 +30,7 @@ const WinnersPage = (quizIds) => {
                 ? <Leaderboard data={userData} /> 
                 : <div><p>Oops, no winner yet!</p></div>
                 }
-                <img className="highscore-img" src="https://media.tenor.com/images/d894ea3155542ede777f6edf39a5f8ea/tenor.gif" alt="wizard" />
+                <img className="highscore-img" src="https://media.tenor.com/images/d894ea3155542ede777f6edf39a5f8ea/tenor.gif" alt="winners" />
             </div>
         </div>
     )
