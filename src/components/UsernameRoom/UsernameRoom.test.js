@@ -1,6 +1,7 @@
 import { default as UsernameRoom } from '.';
-import { screen, render } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import * as actions from '../../actions';
 
 describe('UsernameRoom', () => {
     let joinRoom;
@@ -8,7 +9,7 @@ describe('UsernameRoom', () => {
 
     beforeEach(() => {
         joinRoom = jest.fn();
-        setIcon = jest.fn();
+        setIcon = jest.spyOn(actions, 'setIcon')
         let initState = {
             questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
             quiz: {},
@@ -19,6 +20,8 @@ describe('UsernameRoom', () => {
         };
         renderWithReduxProvider(<UsernameRoom joinRoom={joinRoom} />, { initState });
     });
+
+    afterAll(() => jest.resetAllMocks());
 
     test('it renders a form', () => {
         let form = screen.getByRole('form');
@@ -44,8 +47,8 @@ describe('UsernameRoom', () => {
     });
 
     test('it updates the state with the selected icon', () => {
-        let icon = screen.getAllByRole('img')[0];
-        userEvent.click(icon);
+        let iconTag = screen.getAllByRole('img')[0];
+        userEvent.click(iconTag);
         expect(setIcon).toHaveBeenCalled();
     })
 });

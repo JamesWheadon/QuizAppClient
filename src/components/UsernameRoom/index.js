@@ -11,7 +11,7 @@ function UsernameRoom({ joinRoom }) {
 
     const dispatch = useDispatch();
     const error = useSelector(state => state.error);
-    const user = useSelector(state => state.user)
+    const user = useSelector(state => state.user);
 
     useEffect(() => {
         if (user.name !== "") joinRoom({ user, room });
