@@ -3,7 +3,7 @@ import questionsReducer from './questionsReducer'
 describe('questions reducer', () => {
     test('it intialises with no user details ', () => {
         const initReturn = questionsReducer(undefined, { type: '@@INIT' })
-        expect(initReturn.user).toEqual({name: "", id: 0, score: 0, highscore: 0 })
+        expect(initReturn.user).toEqual({name: "", id: 0, score: 0, highscore: 0, icon:"" })
     })
 
     test('it returns with updated object when users are loaded', () => {

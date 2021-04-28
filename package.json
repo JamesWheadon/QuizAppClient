@@ -4,8 +4,8 @@
   "description": "* Emmanueal\r * Faisal\r * James\r * Rishi\r * Ryan",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --setupFilesAfterEnv ./src/test/setupTests.js",
-    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent --watchAll=false",
+    "test": "jest --watch --verbose --setupFilesAfterEnv ./src/test/setupTests.js",
+    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent",
     "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
     "build": "webpack --config config/webpack.config.production.js"
   },

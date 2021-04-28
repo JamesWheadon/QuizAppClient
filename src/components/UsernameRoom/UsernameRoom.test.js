@@ -4,10 +4,20 @@ import userEvent from '@testing-library/user-event';
 
 describe('UsernameRoom', () => {
     let joinRoom;
+    let setIcon;
 
     beforeEach(() => {
         joinRoom = jest.fn();
-        render(<UsernameRoom joinRoom={joinRoom} />);
+        setIcon = jest.fn();
+        let initState = {
+            questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
+            quiz: {},
+            user: {name: "Steve", id: 0, score: 0, highscore: 0, icon:"" },
+            players: [],
+            player1: false,
+            loading: false
+        };
+        renderWithReduxProvider(<UsernameRoom joinRoom={joinRoom} />, { initState });
     });
 
     test('it renders a form', () => {
@@ -16,13 +26,13 @@ describe('UsernameRoom', () => {
     });
 
     test('it updates the username state when text is input', () => {
-        let usernameInput = screen.getByLabelText('Username:');
+        let usernameInput = screen.getByLabelText('Username');
         userEvent.type(usernameInput, 'Steve');
         expect(usernameInput.value).toBe('Steve');
     });
 
     test('it updates the room state when text is input', () => {
-        let roomInput = screen.getByLabelText('Room code:');
+        let roomInput = screen.getByLabelText('Room code');
         userEvent.type(roomInput, 'Monkey');
         expect(roomInput.value).toBe('Monkey');
     });
@@ -32,4 +42,10 @@ describe('UsernameRoom', () => {
         userEvent.click(submit);
         expect(joinRoom).toHaveBeenCalled();
     });
+
+    test('it updates the state with the selected icon', () => {
+        let icon = screen.getAllByRole('img')[0];
+        userEvent.click(icon);
+        expect(setIcon).toHaveBeenCalled();
+    })
 });

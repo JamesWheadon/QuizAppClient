@@ -1,38 +1,33 @@
-import React, {UseEffect, UseState, UseSelector} from 'react';
-import axios from "axios";
-
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllPlayers } from '../../actions';
 import { Leaderboard } from "../../components";
 
-const WinnersPage = () => {
+const WinnersPage = ({ finished }) => {
 
-    const [userData, setUserData] = useState("");
-
+    const dispatch = useDispatch();
+    // const [userData, setUserData] = useState("");
+    let playersData = useSelector(state => state.players);
+    const quiz = useSelector(state => state.quiz);
+    
+    playersData = playersData.map(p => {return {...p, highscore: p.score/quiz.length}})
+    
     useEffect(() => {
-        async function getUserData() {
-            try {
-                // const lobbyData = useSelector(state => state.quiz.quiz_id)  // quiz_id
-                const playersData = useSelector(state => state.players)  // quiz_id, id, scores
-                setUserData(playersData)
-            } catch {
-                setUserData();
-            }
-        }
-        getUserData()
+        dispatch(getAllPlayers(quiz.id));
     }, []);
-
 
     return (
         <div className="home-container">
             <div className="highscores-container">
                 <br />
                 <br />
-                {userData 
-                ?
-                <Leaderboard data={userData} /> 
-                : <div><p>Oops, no winner yet!</p></div>
+                {finished
+                    ?
+                    <Leaderboard data={playersData} />
+                    : <div><p>Waiting for others...</p></div>
                 }
                 <img className="highscore-img" src="https://media.tenor.com/images/d894ea3155542ede777f6edf39a5f8ea/tenor.gif" alt="winners" />
-                <img src="" alt=""/>
+                <img src="" alt="" />
             </div>
         </div>
     )

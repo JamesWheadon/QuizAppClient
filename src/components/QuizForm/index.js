@@ -93,6 +93,8 @@ const QuizForm = ({ handleFormSubmit }) => {
             {/* <div className="options"> */}
                 <select id="questions" name="length"
                     value={input.length} onChange={handleChange}>
+                        {/* for easier debug */}
+                    <option value="2" >2</option> 
                     <option value="5" >5</option>
                     <option value="10">10</option>
                     <option value="20">20</option>

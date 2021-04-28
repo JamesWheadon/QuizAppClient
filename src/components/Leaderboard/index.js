@@ -1,4 +1,5 @@
 import React from 'react';
+// import "./images/crown.png";
 import "./styles.css";
 
 const Leaderboard = ({ data }) => {
@@ -8,8 +9,13 @@ const Leaderboard = ({ data }) => {
         .map((g, i) => {
             return (
                 <tr key={g.id}>
-                    <td key={`icon-${g.id}`} className={`${i==1 ? "top-layer" : ""}`}>whale</td>
-                    <td key= {`name-${g.id}`}>{g.name}</td>
+                    <td key={`icon-${g.id}`}
+                        className={`${i === 0 ? "top-player" : ""}`}
+                    >
+                    {i === 0 && <img src="/images/crown.png" />}
+                        whale
+                      </td> 
+                    <td key={`name-${g.id}`}>{g.name}</td>
                     <td key={`hs-${g.id}`}>{g.highscore * 100}%</td>
                 </tr>
             )
