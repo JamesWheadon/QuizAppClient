@@ -28,7 +28,10 @@ function App() {
         socket.emit('quiz-start', questions);
     }
 
-    socket.on('all-players', data => setUsers(data));
+    socket.on('all-players', data => {
+        console.log(data)
+        setUsers(data)
+    });
 
     socket.on('quiz-questions', ({questions, quiz}) => {
         dispatch({
