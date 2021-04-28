@@ -7,7 +7,6 @@ const Leaderboard = ({ data }) => {
     let leaderboardData = Array.isArray(data) && data
         .sort((a, b) => { return b.highscore - a.highscore })
         .map((g, i) => {
-            console.log(i);
             return (
                 <tr key={g.id}>
                     <td key={`icon-${g.id}`}

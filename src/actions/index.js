@@ -4,7 +4,8 @@ const error = (err) => ({ type: 'SET_ERROR', payload: err.message });
 const setUser = (name, id, highscore, score = 0) => ({ type: 'LOAD_USER', payload: { name, id, highscore, score } });
 const setPlayerScores = (arr) => ({ type: 'ADD_PLAYERS', payload: arr });
 
-export const setPlayer1 = () => ({ type: 'SET_PLAYER1', payload: { player1: true } });
+export const setPlayer1 = () => ( { type: 'SET_PLAYER1', payload: { player1: true } } );
+export const setIcon = (ref) => ( { type: 'LOAD_ICON', payload: ref } );
 export const updatePlayerScore = () => ({ type: 'UPDATE_SCORE' })
 
 

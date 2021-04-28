@@ -1,7 +1,7 @@
 const initState = {
     questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
     quiz: {},
-    user: {name: "", id: 0, score: 0, highscore: 0 },
+    user: {name: "", id: 0, score: 0, highscore: 0, icon:"" },
     players: [],
     player1: false,
     loading: false
@@ -19,7 +19,13 @@ const questionsReducer = (state=initState, action) => {
         case 'LOAD_USER':
             return ({
                 ...state,
-                user: action.payload,
+                user: {icon: state.user.icon, ...action.payload},
+                error: false
+             })
+        case 'LOAD_ICON':
+            return ({
+                ...state,
+                user: {...state.user, icon: action.payload},
                 error: false
              })
         case 'ADD_PLAYERS':
