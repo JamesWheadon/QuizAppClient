@@ -35,8 +35,8 @@
     margin-top: 25px;
   }
   .icon-img:active{
-    width: 19rem;
-    height: 19rem;
+    width: 9rem;
+    height: 9rem;
     object-fit: cover;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.267);
