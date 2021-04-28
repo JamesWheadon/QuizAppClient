@@ -4,9 +4,11 @@ import userEvent from '@testing-library/user-event';
 
 describe('UsernameRoom', () => {
     let joinRoom;
+    let setIcon;
 
     beforeEach(() => {
         joinRoom = jest.fn();
+        setIcon = jest.fn();
         let initState = {
             questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
             quiz: {},
@@ -40,4 +42,10 @@ describe('UsernameRoom', () => {
         userEvent.click(submit);
         expect(joinRoom).toHaveBeenCalled();
     });
+
+    test('it updates the state with the selected icon', () => {
+        let icon = screen.getAllByRole('img')[0];
+        userEvent.click(icon);
+        expect(setIcon).toHaveBeenCalled();
+    })
 });
