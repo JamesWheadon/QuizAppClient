@@ -18,6 +18,6 @@ describe('QuizAnswer', () => {
     test('it calls submitAnswer on click', () => {
         let answer = screen.getByRole('button');
         userEvent.click(answer);
-        expect(submitAnswer).toHaveBeenCalledWith(true);
+        expect(submitAnswer).toHaveBeenCalled();
     })
 });

@@ -8,7 +8,7 @@ function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
         const answers = shuffle(wrongAnswers);
         let i = 0;
         return answers.map(a =>
-            a == correctAnswer ? <QuizAnswer value={a} correct={true} submitAnswer={submitAnswer} key={i++}/> : 
+            a === correctAnswer ? <QuizAnswer value={a} correct={true} submitAnswer={submitAnswer} key={i++}/> : 
             <QuizAnswer value={a} correct={false} submitAnswer={submitAnswer} key={i++}/>
         );
     };
@@ -25,7 +25,7 @@ function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
 
     return (
         <div id="quizQuestion">
-            <h2>{question}</h2>
+            <h2 dangerouslySetInnerHTML= {{__html: question}}></h2>
             {renderAnswers()}
         </div>
     );
