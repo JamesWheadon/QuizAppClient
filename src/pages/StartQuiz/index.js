@@ -9,8 +9,6 @@ import './styles.css'
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
 
-    users = [{ id: 1, name: "Bob" }, { id: 2, name: "Charlie" }]; // mock user for testing
-
     const dispatch = useDispatch();
     const history = useHistory();
 
