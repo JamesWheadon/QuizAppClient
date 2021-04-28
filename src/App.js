@@ -7,15 +7,15 @@ import { io } from "socket.io-client";
 
 import "./App.css";
 
-const socket = io("http://localhost:3000");
+const socket = io("http://localhost:5001");
 
 function App() {
     const [users, setUsers] = useState([])
     const [messages, setMessages] = useState([])
     socket.on('admin-message', msg => console.log(msg));
 
-    const joinRoom = (e) => {
-        const data = { username: e.username, room: e.room };
+    const joinRoom = (data) => {
+        // const data = { username: e.username, room: e.room };
         socket.emit('request-join-game', data);
     }
 
@@ -23,7 +23,7 @@ function App() {
         socket.emit('chat-message', message);
     }
 
-    socket.on('all-players', data => setUsers(data.roomUsernames));
+    socket.on('all-players', data => setUsers(data));
     socket.on('new-chat-message', m => {
         let copy = [...messages];
         copy.push(m);
