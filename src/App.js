@@ -32,11 +32,12 @@ function App() {
     socket.on('all-players', data => setUsers(data.roomUsernames));
 
     socket.on('quiz-questions', ({questions, quiz}) => {
-        dispatch({
-            type: 'LOAD_QUESTIONS',
-            payload: { questions, quiz }
-        })
-        history.push('/quiz');
+        console.log(questions, quiz)
+        //dispatch({
+        //    type: 'LOAD_QUESTIONS',
+        //    payload: { questions, quiz }
+        //})
+        //history.push('/quiz');
     })
 
     socket.on('new-chat-message', m => {

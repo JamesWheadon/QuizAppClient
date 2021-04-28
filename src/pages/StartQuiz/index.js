@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { UsernameRoom, RoomUser, RoomChat, QuizForm } from '../../components';
@@ -13,14 +13,19 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const questions = useSelector(state => state.questions);
+    const quiz = useSelector(state => state.quiz);
+
+    useEffect(() => {
+        if (quiz) {
+            quizStart({questions, quiz});
+            history.push('/quiz');
+        }
+    }, [questions])
 
     const handleFormSubmit = (input) => {
-        input.users = users.map(u => u.id);
+        input.users = [1, 2] //users.map(u => u.id);
         dispatch(fetchQuestions(input));
-        const questions = useSelector(state => state.questions);
-        const quiz = useSelector(state => state.quiz);
-        quizStart({questions, quiz});
-        history.push('/quiz');
     };
 
     const renderUsers = () => {
