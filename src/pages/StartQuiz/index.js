@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom";
 import { UsernameRoom, RoomUser, RoomChat, QuizForm } from '../../components';
 import { fetchQuestions } from "../../actions";
 
+
+import './styles.css'
+
 const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
 
     users = [{ id: 1, name: "Bob" }, { id: 2, name: "Charlie" }]; // mock user for testing
@@ -25,17 +28,26 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
 
     const renderRoom = () => {
         return (
-            <>
-                {renderUsers()}
+            <div className="waiting-room">              
+                <div className="room-users">
+                    <h2>Current Quizards:</h2>
+                    {renderUsers()}
+
+                </div>
+                <div  className="room-chat">
                 <RoomChat sendMessage={sendMessage} messages={messages} />
-                <QuizForm handleFormSubmit={handleFormSubmit} />
-            </>
+                </div>
+                
+                
+                <div className="room-quiz-form">
+                    <QuizForm handleFormSubmit={handleFormSubmit} />
+                </div>
+            </div>
         )
     }
 
     return (
         <div>
-            Hi
             {users.length === 0 ? <UsernameRoom joinRoom={joinRoom} /> : renderRoom()
             }
         </div>
