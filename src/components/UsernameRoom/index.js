@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser } from "../../actions";
+import { addUser, setIcon } from "../../actions";
 import { IconCard } from '../index'
 
 
@@ -32,10 +32,7 @@ function UsernameRoom({ joinRoom }) {
         setRoom(input)
     }
     const handleIconSelection = (selectedIcon) => {
-        setInput(prev => ({
-            ...prev,
-            icon: selectedIcon
-        }))
+        dispatch(setIcon(selectedIcon));
     }
     const icons = [
         {
