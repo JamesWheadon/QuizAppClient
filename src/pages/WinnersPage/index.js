@@ -1,4 +1,5 @@
-import React, {useEffect, useState, useSelector} from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import axios from "axios";
 
 import { Leaderboard } from "../../components";
@@ -26,13 +27,13 @@ const WinnersPage = () => {
             <div className="highscores-container">
                 <br />
                 <br />
-                {userData 
-                ?
-                <Leaderboard data={userData} /> 
-                : <div><p>Oops, no winner yet!</p></div>
+                {userData
+                    ?
+                    <Leaderboard data={userData} />
+                    : <div><p>Oops, no winner yet!</p></div>
                 }
                 <img className="highscore-img" src="https://media.tenor.com/images/d894ea3155542ede777f6edf39a5f8ea/tenor.gif" alt="winners" />
-                <img src="" alt=""/>
+                <img src="" alt="" />
             </div>
         </div>
     )
