@@ -27,10 +27,12 @@ const WinnersPage = () => {
                 <br />
                 <br />
                 {userData 
-                ? <Leaderboard data={userData} /> 
+                ?
+                <Leaderboard data={userData} /> 
                 : <div><p>Oops, no winner yet!</p></div>
                 }
                 <img className="highscore-img" src="https://media.tenor.com/images/d894ea3155542ede777f6edf39a5f8ea/tenor.gif" alt="winners" />
+                <img src="" alt=""/>
             </div>
         </div>
     )

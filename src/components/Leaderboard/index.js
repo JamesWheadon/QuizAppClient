@@ -5,12 +5,12 @@ const Leaderboard = ({ data }) => {
 
     let leaderboardData = Array.isArray(data) && data
         .sort((a, b) => { return b.highscore - a.highscore })
-        .map((g) => {
+        .map((g, i) => {
             return (
                 <tr key={g.id}>
+                    <td key={`icon-${g.id}`} className={`${i==1 ? "top-layer" : ""}`}>whale</td>
                     <td key= {`name-${g.id}`}>{g.name}</td>
                     <td key={`hs-${g.id}`}>{g.highscore * 100}%</td>
-                    <td key={`icon-${g.id}`}>whale</td>
                 </tr>
             )
         })
