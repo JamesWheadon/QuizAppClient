@@ -9,3 +9,4 @@ export { default as TopicCard } from './TopicCard';
 export { default as QuizForm } from './QuizForm';
 export { default as QuizAnswer } from './QuizAnswer';
 export { default as QuizQuestion } from './QuizQuestion';
+export { default as IconCard } from './IconCard';

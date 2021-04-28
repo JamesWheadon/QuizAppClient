@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import {IconCard} from '../index'
 
-import './style.css'
 
 function UsernameRoom({ joinRoom }) {
 
@@ -21,16 +21,52 @@ function UsernameRoom({ joinRoom }) {
         const input = e.target.value
         setRoom(input)
     }
+    const handleIconSelection = (selectedIcon) => {
+        setInput(prev => ({
+            ...prev,
+            icon: selectedIcon
+        }))
+    }
+    const icons = [
+        {
+            id: "1",
+            icon: "https://www.flaticon.com/svg/vstatic/svg/3275/3275236.svg?token=exp=1619603848~hmac=7e8519fbb3d6f541fe95c30bdcd26c86",
+        },
+        {
+            id: "2",
+            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275341.svg",
+        },
+        {
+            id: "3",
+            icon: "https://www.flaticon.com/svg/vstatic/svg/3275/3275233.svg?token=exp=1619603742~hmac=996322f21ca7c50b6d674ab7870c6ead",
+        },
+        {
+            id: "4",
+            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275356.svg",
+        },
+        {
+            id: "5",
+            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275371.svg",
+        }
+    ]
+    const iconsList = icons.map(icon => {
+        return(<IconCard key={icon.id} icon={icon} selectIcon={handleIconSelection} />
+            )
+    })
 
 
     return (
         <form className="room-form" onSubmit={handleSubmit} role="form">
+            <div id="icon-container">
+                {iconsList}
+            </div>
             <label>Username
                 <input type="text" value={username} onChange={updateUsernameInput} />
             </label>
             <label>Room code
                 <input type="text" value={room} onChange={updateRoomInput} />
             </label>
+            
             <button type="submit">Join Room</button>
         </form>
     );
