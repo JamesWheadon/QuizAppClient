@@ -29,7 +29,7 @@ function App() {
         socket.emit('quiz-start', questions);
     }
 
-    socket.on('all-players', data => setUsers(data.roomUsernames));
+    socket.on('all-players', data => setUsers(data));
 
     socket.on('quiz-questions', ({questions, quiz}) => {
         dispatch({
@@ -47,6 +47,10 @@ function App() {
 
     socket.on('room-full', () => {
         window.alert('This room is currently full');
+    })
+
+    socket.on('taken-username', () => {
+        window.alert('This username is already taken');
     })
 
     return (
