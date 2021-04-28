@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { QuizQuestion } from '../../components';
 import { updatePlayerScore } from "../../actions";
 
@@ -9,15 +10,17 @@ const Quiz = () => {
     const [score, setScore] = useState(0);
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const questions = useSelector(state => state.questions);
 
     const renderResults = () => {
-        console.log(score);
+        
+        history.push('/winners')
     }
     
     const submitAnswer = (e) => {
-        if (e.target.value) {
+        if (e.target.value === "true") {
             dispatch(updatePlayerScore());
             setScore(prevState => prevState + 1);
         }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { NavBar } from './components';
-import { Home, StartQuiz, Login, Highscores, Quiz } from './pages';
+import { Home, StartQuiz, Login, Highscores, Quiz, WinnersPage } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
@@ -16,8 +16,7 @@ function App() {
     const dispatch = useDispatch();
     socket.on('admin-message', msg => console.log(msg));
 
-    const joinRoom = (e) => {
-        const data = { username: e.username, room: e.room };
+    const joinRoom = (data) => {
         socket.emit('request-join-game', data);
     }
 
@@ -63,6 +62,7 @@ function App() {
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
                     <Route path="/quiz"><Quiz /></Route>
+                    <Route path="/winners"><WinnersPage /></Route>
                 </Switch>
             </main>
             <Footer />

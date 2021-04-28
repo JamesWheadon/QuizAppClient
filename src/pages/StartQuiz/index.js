@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { UsernameRoom, RoomUser, RoomChat, QuizForm } from '../../components';
+import { UsernameRoom, RoomUser, RoomChat, QuizForm} from '../../components';
 import { fetchQuestions } from "../../actions";
 
 import './styles.css'
