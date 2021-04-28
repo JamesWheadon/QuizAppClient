@@ -17,7 +17,7 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
     const quiz = useSelector(state => state.quiz);
 
     useEffect(() => {
-        if (quiz) {
+        if (questions.length > 1) {
             quizStart({questions, quiz});
             history.push('/quiz');
         }
