@@ -66,7 +66,7 @@ function UsernameRoom({ joinRoom }) {
             </label>
             
             <div id="icon-container">
-                <p>Select an Icon below:</p>
+                <p>Select an Icon:</p>
                 
                 {iconsList}
             </div>
