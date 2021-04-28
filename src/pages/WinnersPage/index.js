@@ -1,4 +1,4 @@
-import React, {UseEffect, UseState, UseSelector} from 'react';
+import React, {useEffect, useState, useSelector} from 'react';
 import axios from "axios";
 
 import { Leaderboard } from "../../components";
