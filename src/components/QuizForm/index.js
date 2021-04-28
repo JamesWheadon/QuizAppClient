@@ -2,8 +2,6 @@ import React, { useState, } from "react";
 import './style.css'
 import { TopicCard } from "../index"
 
-import { fetchQuestions } from "../../actions";
-
 const QuizForm = ({ handleFormSubmit }) => {
 
     const [input, setInput] = useState(
@@ -13,8 +11,6 @@ const QuizForm = ({ handleFormSubmit }) => {
             category: 11
         }
     );
-
-    // const [selectTopic, setSelectTopic] = useState("");
 
     const handleTopicSelection = (selectedTopic) => {
         setInput(prev => ({
@@ -75,34 +71,35 @@ const QuizForm = ({ handleFormSubmit }) => {
         )
     })
     return (
-        <form id="quiz-form" action="" method="get" onSubmit={handleSubmit}>
-            <div className="col-25">
-                <label htmlFor="difficulties">Select Difficulty:</label>
+        <form className="quiz-form" action="" method="get" onSubmit={handleSubmit}>
+            <div id="topic-container">
+                {topicsList}
             </div>
-            <div className="options">
+
+            {/* <div className="col-25"> */}
+                <label htmlFor="difficulties">Difficulty:</label>
+            {/* </div> */}
+            {/* <div className="options"> */}
                 <select id="difficulties" name="difficulty"
                     value={input.difficulty} onChange={handleChange}>
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                 </select>
-            </div>
-            <div className="col-25">
+            {/* </div> */}
+            {/* <div className="col-25"> */}
                 <label htmlFor="questions">Number of Questions:</label>
-            </div>
-            <div className="options">
+            {/* </div> */}
+            {/* <div className="options"> */}
                 <select id="questions" name="length"
                     value={input.length} onChange={handleChange}>
                     <option value="5" >5</option>
                     <option value="10">10</option>
                     <option value="20">20</option>
                 </select>
-            </div>
-            <div id="topic-container">
-                {topicsList}
-            </div>
-
-            <input type="submit" value="Start Quiz" />
+            {/* </div> */}
+            
+            <button type="submit"> Start Quiz </button>
         </form>
     )
 
