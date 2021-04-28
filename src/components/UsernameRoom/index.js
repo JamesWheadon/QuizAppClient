@@ -40,23 +40,23 @@ function UsernameRoom({ joinRoom }) {
     const icons = [
         {
             id: "1",
-            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275293.svg",
+            icon: "https://image.flaticon.com/icons/png/512/1680/1680373.png",
         },
         {
             id: "2",
-            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275341.svg",
+            icon: "https://image.flaticon.com/icons/png/512/1680/1680378.png",
         },
         {
             id: "3",
-            icon: "https://www.flaticon.com/svg/vstatic/svg/3275/3275233.svg?token=exp=1619603742~hmac=996322f21ca7c50b6d674ab7870c6ead",
+            icon: "https://image.flaticon.com/icons/png/512/2119/2119228.png",
         },
         {
             id: "4",
-            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275356.svg",
+            icon: "https://image.flaticon.com/icons/png/512/1835/1835142.png",
         },
         {
             id: "5",
-            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275371.svg",
+            icon: "https://image.flaticon.com/icons/png/512/818/818089.png",
         }
     ]
     const iconsList = icons.map(icon => {
