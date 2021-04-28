@@ -1,5 +1,4 @@
 const initState = {
-    category: "",
     questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
     quiz: {},
     user: {name: "", id: 0, score: 0, highscore: 0 },

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser } from "../../actions";
 import {IconCard} from '../index'
 
 
@@ -7,9 +9,17 @@ function UsernameRoom({ joinRoom }) {
     const [username, setUsername] = useState("")
     const [room, setRoom] = useState("")
 
-    const handleSubmit = e => {
+    const dispatch = useDispatch();
+    const error = useSelector(state => state.error);
+    const user = useSelector(state => state.user)
+
+    useEffect(() => {
+         if(user.name !== "") joinRoom({ user, room });
+    }, [user]);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        joinRoom({username: username, room: room});
+        await dispatch(addUser(username));   
     }
 
     const updateUsernameInput = e => {

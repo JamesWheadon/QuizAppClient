@@ -9,3 +9,13 @@
 .table-input {
     margin-bottom: 50px;
 }
+
+.top-player {
+    position: relative;
+}
+.top-player > img {
+    width: 100%;
+    top: -100px;
+    left: 0;
+    position: absolute;
+}
