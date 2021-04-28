@@ -18,7 +18,8 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
         input.users = users.map(u => u.id);
         dispatch(fetchQuestions(input));
         const questions = useSelector(state => state.questions);
-        quizStart(questions);
+        const quiz = useSelector(state => state.quiz);
+        quizStart({questions, quiz});
         history.push('/quiz');
     };
 

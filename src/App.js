@@ -12,6 +12,7 @@ const socket = io("http://localhost:5001");
 function App() {
     const [users, setUsers] = useState([])
     const [messages, setMessages] = useState([])
+    const dispatch = useDispatch();
     socket.on('admin-message', msg => console.log(msg));
 
     const joinRoom = (e) => {
@@ -28,6 +29,15 @@ function App() {
     }
 
     socket.on('all-players', data => setUsers(data.roomUsernames));
+
+    socket.on('quiz-questions', ({questions, quiz}) => {
+        dispatch({
+            type: 'LOAD_QUESTIONS',
+            payload: { questions, quiz }
+        })
+        history.push('/quiz');
+    })
+
     socket.on('new-chat-message', m => {
         let copy = [...messages];
         copy.push(m);
@@ -39,9 +49,9 @@ function App() {
             <Header />
             <main>
                 <Switch>
-                    <Route exact path = "/"><Home /></Route>
+                    <Route exact path="/"><Home /></Route>
                     <Route path="/login"><Login /></Route>
-                    <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart}/></Route>
+                    <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
                     <Route path="/quiz"><Quiz /></Route>
                 </Switch>
@@ -51,5 +61,5 @@ function App() {
     )
 }
 
-export default App ;
+export default App;
 
