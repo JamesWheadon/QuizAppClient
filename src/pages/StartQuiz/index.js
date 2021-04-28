@@ -9,7 +9,7 @@ import './styles.css'
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
-    users = [{ id: 1, name: "Bob" }, { id: 2, name: "Charlie" }]; // mock user for testing
+    //users = [{ id: 1, name: "Bob" }, { id: 2, name: "Charlie" }]; // mock user for testing
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -25,7 +25,7 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     const renderUsers = () => {
         return users.map(user =>
-            <RoomUser username={user.name} key={user.id} />
+            <RoomUser username={user.name || user} key={user.id || users.indexOf(user)} />
         );
     };
 

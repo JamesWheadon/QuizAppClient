@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import { NavBar } from './components';
 import { Home, StartQuiz, Login, Highscores, Quiz } from './pages';
 import { Header, Footer } from './layout';
