@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './style.css'
+
 function UsernameRoom({ joinRoom }) {
 
     const [username, setUsername] = useState("")
@@ -22,11 +24,11 @@ function UsernameRoom({ joinRoom }) {
 
 
     return (
-        <form onSubmit={handleSubmit} role="form">
-            <label>Username:
+        <form className="room-form" onSubmit={handleSubmit} role="form">
+            <label>Username
                 <input type="text" value={username} onChange={updateUsernameInput} />
             </label>
-            <label>Room code:
+            <label>Room code
                 <input type="text" value={room} onChange={updateRoomInput} />
             </label>
             <button type="submit">Join Room</button>

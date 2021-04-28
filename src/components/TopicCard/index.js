@@ -9,7 +9,6 @@ const TopicCard = ({ topic, selectCard }) => {
                 <img className="topic-img" src={topic.image} onClick= {()=>selectCard(topic.id)} />
                 <div className="topic-info">
                     <h3><b>{topic.name}</b></h3>
-                    <p>Click to select</p>
                 </div>
             </div>
 

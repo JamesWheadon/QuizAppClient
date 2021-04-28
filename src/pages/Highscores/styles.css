@@ -1,13 +1,3 @@
-.home-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #d9a233;
-    width: 840px;
-    padding: 0px;
-    margin: 0px;
-    height: 750px;
-}
 
 .highscores-container {
     position: relative;

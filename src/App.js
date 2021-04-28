@@ -5,6 +5,8 @@ import { Home, StartQuiz, Login, Highscores, Quiz } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
+import "./App.css";
+
 const socket = io("http://localhost:3000");
 
 function App() {
