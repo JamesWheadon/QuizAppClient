@@ -45,6 +45,10 @@ function App() {
         setMessages(copy);
     });
 
+    socket.on('room-full', () => {
+        window.alert('This room is currently full');
+    })
+
     return (
         <div id="app">
             <Header />
