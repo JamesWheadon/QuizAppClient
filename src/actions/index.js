@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const error = (err) => ({ type: 'SET_ERROR', payload: err.message });
 const setUser = (name, id, highscore, score=0) => ( { type: 'LOAD_USER', payload: { name, id, highscore, score } } );
+const setPlayerScores = (arr) => ( { type: 'ADD_PLAYERS', payload: arr } );
 
 export const setPlayer1 = () => ( { type: 'SET_PLAYER1', payload: { player1: true } } );
 export const updatePlayerScore = () => ({ type: 'UPDATE_SCORE' })
@@ -64,5 +65,16 @@ export const sendScore = (userid, username, score) => {
 }
 
 
-
+export const getAllPlayers = (quizid) => {
+    return async (dispatch) => {
+        try {
+            let { data } = await axios.get(`http://localhost:3000/quizzes/${quizid}/users/`)
+            let players = data
+            dispatch(setPlayerScores(players))
+        
+        } catch (err) {
+            dispatch(error(err))
+        }
+    }
+}
 
