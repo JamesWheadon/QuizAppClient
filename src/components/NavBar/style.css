@@ -1,24 +1,20 @@
 
 nav {
-    width: 815px;
-    padding: 0px;
-    margin: 0px;
+    width: 100%;
     background-color: #671e14; 
-    padding: 25px;
+    /* padding: 25px 50px; */
     display: flex;
     justify-content: space-evenly;
 }
 
-*{
-    border: 0;
-    padding: 0;
-    margin: 0;
-    }
-
-a { 
+nav > a {
+    height: 100%;
+    width: 100%;
     color: #c2895c;
     text-decoration: none;
-    font-size: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    padding: 3rem;
     text-transform: uppercase;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -32,7 +28,7 @@ a:hover {
     color: white;
 }
 
-.home-link { color: white; }
+/* .home-link { color: white; } */
 
 .nav-head {
     width: 820px
@@ -43,6 +39,7 @@ a:hover {
     height: 200px;
 }
 
-.nav-links {
+/* .nav-links {
     padding-left: 0px;
-}
+} */
+
