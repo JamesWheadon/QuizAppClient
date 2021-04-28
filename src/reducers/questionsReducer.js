@@ -19,7 +19,7 @@ const questionsReducer = (state=initState, action) => {
         case 'LOAD_USER':
             return ({
                 ...state,
-                user: {...state.user, ...action.payload},
+                user: {icon: state.user.icon, ...action.payload},
                 error: false
              })
         case 'LOAD_ICON':
