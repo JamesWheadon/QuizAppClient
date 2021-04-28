@@ -13,7 +13,10 @@ const socket = io("http://localhost:5001");
 function App() {
     const [users, setUsers] = useState([])
     const [messages, setMessages] = useState([])
+    const [finished, setFinished] = useState([]);
+
     const dispatch = useDispatch();
+
     socket.on('admin-message', msg => console.log(msg));
 
     const joinRoom = (data) => {
@@ -26,6 +29,12 @@ function App() {
 
     const quizStart = (questions) => {
         socket.emit('quiz-start', questions);
+    }
+
+    
+    const finishQuiz = () => {
+        console.log("Finishing quiz!");
+        socket.emit('finish-quiz');
     }
 
     socket.on('all-players', data => setUsers(data));
@@ -52,6 +61,13 @@ function App() {
         window.alert('This username is already taken');
     })
 
+    socket.on('player-done', (user) => {
+        console.log("Someone finished!");
+        let copy = [...finished];
+        copy.push(user);
+        setFinished(copy);
+    })
+
     return (
         <div id="app">
             <Header />
@@ -61,8 +77,8 @@ function App() {
                     <Route path="/login"><Login /></Route>
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
-                    <Route path="/quiz"><Quiz /></Route>
-                    <Route path="/winners"><WinnersPage /></Route>
+                    <Route path="/quiz"><Quiz finishQuiz={finishQuiz}/></Route>
+                    <Route path="/winners"><WinnersPage finished={users.length === finished.length}/></Route>
                 </Switch>
             </main>
             <Footer />

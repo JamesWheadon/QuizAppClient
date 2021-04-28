@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { QuizQuestion } from '../../components';
-import { updatePlayerScore } from "../../actions";
+import { updatePlayerScore, sendScore } from "../../actions";
 
-const Quiz = () => {
+const Quiz = ({finishQuiz}) => {
 
     const [questionNumber, setQuestionNumber] = useState(0);
     const [score, setScore] = useState(0);
@@ -12,10 +12,13 @@ const Quiz = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    const quiz = useSelector(state => state.quiz);
     const questions = useSelector(state => state.questions);
+    const user = useSelector(state => state.user);
 
     const renderResults = () => {
-        
+        finishQuiz();
+        dispatch(sendScore(quiz.id, user.name, user.score))
         history.push('/winners')
     }
     

@@ -49,12 +49,11 @@ export const fetchQuestions = (input) => {
 
 
 /// sends score and resets user state to include new highscore
-export const sendScore = (userid, username, score) => {
+export const sendScore = (quizId, username, score) => {
     return async (dispatch) => {
         try {
-            await axios.put(`http://localhost:3000/quizzes/${userid}/users/${username}`, { highscore: score })
+            await axios.put(`http://localhost:3000/quizzes/${quizId}/users/${username}`, { highscore: score })
             let { data } = await axios.get(`http://localhost:3000/users/${username}`)
-            console.log(data)
             let { name, id, highscore } = data
             dispatch(setUser(name, id, highscore, score))
 
@@ -69,7 +68,9 @@ export const getAllPlayers = (quizid) => {
     return async (dispatch) => {
         try {
             let { data } = await axios.get(`http://localhost:3000/quizzes/${quizid}/users/`)
+            console.log(data);
             let players = data
+            
             dispatch(setPlayerScores(players))
 
         } catch (err) {
