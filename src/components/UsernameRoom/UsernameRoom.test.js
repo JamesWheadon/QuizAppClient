@@ -7,7 +7,8 @@ describe('UsernameRoom', () => {
 
     beforeEach(() => {
         joinRoom = jest.fn();
-        render(<UsernameRoom joinRoom={joinRoom} />);
+        let initState = { location: "New York City", result: { sunrise: "", sunset: "" } };
+        renderWithReduxProvider(<UsernameRoom joinRoom={joinRoom} />, { initState });
     });
 
     test('it renders a form', () => {
