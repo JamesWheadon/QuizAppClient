@@ -26,7 +26,10 @@ function RoomChat({ sendMessage, messages }) {
 
     return (
         <div id="roomChat">
-            {renderMessages()}
+            <div className="chat-messages">
+                {renderMessages()}
+            </div>
+
             <form onSubmit={handleSubmit} role="form">
                 <label>Chat:
                     <input type="text" value={chatMessage} onChange={updateMessageInput} />
