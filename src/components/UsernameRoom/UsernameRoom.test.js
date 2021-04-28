@@ -7,7 +7,14 @@ describe('UsernameRoom', () => {
 
     beforeEach(() => {
         joinRoom = jest.fn();
-        let initState = { location: "New York City", result: { sunrise: "", sunset: "" } };
+        let initState = {
+            questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
+            quiz: {},
+            user: {name: "Steve", id: 0, score: 0, highscore: 0, icon:"" },
+            players: [],
+            player1: false,
+            loading: false
+        };
         renderWithReduxProvider(<UsernameRoom joinRoom={joinRoom} />, { initState });
     });
 
