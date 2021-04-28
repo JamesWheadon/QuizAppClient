@@ -30,7 +30,7 @@ function UsernameRoom({ joinRoom }) {
     const icons = [
         {
             id: "1",
-            icon: "https://www.flaticon.com/svg/vstatic/svg/3275/3275236.svg?token=exp=1619603848~hmac=7e8519fbb3d6f541fe95c30bdcd26c86",
+            icon: "https://www.flaticon.com/premium-icon/icons/svg/3275/3275293.svg",
         },
         {
             id: "2",
@@ -57,9 +57,7 @@ function UsernameRoom({ joinRoom }) {
 
     return (
         <form className="room-form" onSubmit={handleSubmit} role="form">
-            <div id="icon-container">
-                {iconsList}
-            </div>
+            
             <label>Username
                 <input type="text" value={username} onChange={updateUsernameInput} />
             </label>
@@ -67,6 +65,11 @@ function UsernameRoom({ joinRoom }) {
                 <input type="text" value={room} onChange={updateRoomInput} />
             </label>
             
+            <div id="icon-container">
+                <p>Select an Icon below:</p>
+                
+                {iconsList}
+            </div>
             <button type="submit">Join Room</button>
         </form>
     );
