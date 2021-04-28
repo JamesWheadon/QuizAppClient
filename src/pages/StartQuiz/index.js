@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { UsernameRoom, RoomUser, RoomChat, QuizForm } from '../../components';
 import { fetchQuestions } from "../../actions";
@@ -7,7 +7,7 @@ import { fetchQuestions } from "../../actions";
 
 import './styles.css'
 
-const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
+const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     users = [{ id: 1, name: "Bob" }, { id: 2, name: "Charlie" }]; // mock user for testing
 
@@ -17,7 +17,9 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages }) => {
     const handleFormSubmit = (input) => {
         input.users = users.map(u => u.id);
         dispatch(fetchQuestions(input));
-        history.push('/quiz')
+        const questions = useSelector(state => state.questions);
+        quizStart(questions);
+        history.push('/quiz');
     };
 
     const renderUsers = () => {
