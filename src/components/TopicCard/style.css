@@ -10,11 +10,10 @@
   /* border: 3px solid black; */
   /* background-color: black; */
   border-radius: var(--card-br);
-  
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.267);
   transition: 0.3s;
-
+  cursor: pointer;
 }
 
 .topic-card  img {
@@ -35,4 +34,8 @@
   text-align: center;
   position: absolute;
   bottom: 0px;
+}
+
+.topic-card:focus .topic-info {
+  color: rgb(38, 155, 38);
 }
