@@ -1,0 +1,44 @@
+:root{
+    --card-br : 10px;
+  }
+  
+  .icon-card {
+    position: relative;
+    text-align: center;
+    width: 9rem;
+    height: 9rem;
+    border-radius: var(--card-br);  
+  }
+  
+  .icon-card  img {
+    border-radius: var(--card-br);
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .icon-img:hover {
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  #icon-container {
+    display: flex;
+    flex-flow: column;
+    max-width: 80vw;
+    flex-flow: row wrap;
+    justify-content: center;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 25px;
+  }
+  .icon-img:active{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.267);
+  }
+  

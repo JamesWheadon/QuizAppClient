@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Righteous&family=Shadows+Into+Light&display=swap');
+
+.home-container {
+    max-width: 60vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.home-container > 
+.welcome-text {
+    text-align: center;
+}
+
+.welcome-text > h1 {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 4em;
+    text-align: center;
+    font-family: Righteous;
+    color: var(--main-text-color);
+}
+.welcome-text > p {
+    background-color: var(--main-bg-color);
+    font-size: 2em;
+    border-radius: 20px;
+    margin: 0.5em;
+    padding: 1em;
+}
+
+.home-container >.main-logo {
+    margin-bottom: 40px;
+    max-width: 500px;
+
+}
+
+.start-quiz-btn {
+    font-size: 3em;
+}
+
+.block:hover {
+    color: white;
+}
+
+
+@media only screen and (max-width:  768px)  {
+    .home-container {
+        max-width: 100%;
+    }
+}
