@@ -1,18 +1,21 @@
 .highscores-table {
-    border: none;
     border-spacing: 0;
+    border-collapse: collapse;
     border-radius: 20px;
     width: 100%;
     color: white;
     font-size: 2rem;
+    overflow:hidden;
     overflow-y: scroll;
-    border-collapse: inherit;
+
+
 }
 
 .highscores-table > thead {
     width: 100%;
     text-align: left;
-    background-color: var(--highlight-color);
+    background-color: var(--nav-color);
+ 
 }
 
 .highscores-table .player-header {
