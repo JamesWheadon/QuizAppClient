@@ -7,7 +7,7 @@ import { fetchQuestions } from "../../actions";
 import './styles.css'
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
-    users=[{name:"bob", id:"2"}] //test
+    // users=[{name:"bob", id:"2"}] //test
     const dispatch = useDispatch();
     const history = useHistory();
     const questions = useSelector(state => state.questions);
