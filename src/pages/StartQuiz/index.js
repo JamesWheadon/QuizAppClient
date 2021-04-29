@@ -27,7 +27,7 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     const renderUsers = () => {
         return users.map(user =>
-            <RoomUser username={user.name} key={user.id} />
+            <RoomUser user={user} key={user.id} />
         );
     };
 

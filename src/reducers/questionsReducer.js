@@ -1,7 +1,7 @@
 const initState = {
     questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
     quiz: {},
-    user: {name: "", id: 0, score: 0, highscore: 0, icon:"3" },
+    user: {name: "", id: 0, score: 0, highscore: 0, icon:"4" },
     players: [],
     player1: false,
     loading: false
