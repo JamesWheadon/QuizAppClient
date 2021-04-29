@@ -2,11 +2,10 @@
 @media only screen and (max-device-width: 1025px) {
   /* Start a quiz page */
   .room-form{
-    background-color: blueviolet;
     height: 50rem;
-    width: 60rem;
+    width: 58rem;
     font-size: 2rem;
-    margin-top: 7rem;
+    padding-top: 7rem;
   }
   .icon-card {
       position: relative;
@@ -29,8 +28,14 @@
       border-radius: 10px;
       width: 100%;
       margin-top: 7rem;
+      margin-left: 1rem;
     }
-   
+   form label{
+     font-size: 2rem;
+   }
+   #icon-container p{
+     font-size: 2rem;
+   }
     form input[type=text] {
         font-size: 1.9rem;
         width: 13.8rem;
@@ -44,35 +49,71 @@
       width: 100%;
       font-size: 2rem;
     }
-     /* Waiting room page */
     .waiting-room {
-      height: 70rem;
-      margin-top: -7rem;
+      height: 55rem;
+      margin-top: 0.5rem;
+      width: 51rem;
     }
     .room-users {
-      height: 20rem;
-      width: 15rem;
-      background-color: blueviolet;
-    }
+      height: 25.5rem;
+      width: 19.3rem;
+      font-size: 1.5rem; 
+      }
     .room-chat {
-      background-color: burlywood;
-    }
-    .room-quiz-form {
-      background-color: chartreuse;
+       font-size: 1.2rem;
     }
     .quiz-form{
-      background-color: cyan;
+      font-size: 1.4rem;
+      height: 54rem;
+    }
+    [role=form] {
+      margin-top: -3.1rem;
+      font-size: 1.2rem;
+    }
+    #topic-container{
+      height: 45rem;
+  }
+    .topic-card{
+      height: 11rem;
+      width: 11rem;
+    }
+    #difficulties{
+      font-size: 1.5rem;
+      width: 27rem;
+      height: 3rem;
+      border-radius: 12px;
+    }
+    #questions{
+      font-size: 1.2rem;
+      width: 27rem;
+      height: 3rem;
+      border-radius: 12px;
+    }
+    form input[type=text]{
+      height: 3rem;
+      margin-bottom: -3rem;
+    }
+    /* leaderboard page */
+    .highscores-container{
+      width: 60rem;
+      height: 60rem;
+    }
+    thead{
+      font-size: 3rem;
+    }
+    tbody{
+      font-size: 2.5rem;
     }
 }
 /* Phones */
 @media only screen and (max-device-width: 420px) {
   /* Start a quiz page */
   .room-form{
-    background-color: red;
     height: 50rem;
-    width: 60rem;
-    font-size: 2rem;
+    width: 57rem;
+    font-size: 1.8rem;
     margin-top: 7rem;
+    font-weight: bolder;
   }
   .icon-card {
       position: relative;
@@ -95,6 +136,12 @@
       border-radius: 10px;
       width: 100%;
       margin-top: 7rem;
+    }
+    form label{
+      font-size: 1.8rem;
+    }
+    #icon-container p{
+      font-size: 1.8rem;
     }
    
     form input[type=text] {
@@ -111,5 +158,61 @@
       font-size: 2rem;
     }
     /* Waiting room page */
+    .waiting-room {
+      height: 75rem;
+      margin-top: 1.3rem;
+      width: 51rem;
+    }
+    .room-users {
+      height: 32.5rem;
+      width: 18.5rem;
+      font-size: 1.5rem;
+    }
+    .room-chat {
+       font-size: 1.2rem;
+    }
+    .quiz-form{
+      font-size: 1.4rem;
+      height: 74rem;
+    }
+    [role=form] {
+      /* background-color: wheat; */
+      margin-top: -5.5rem;
+      font-size: 1.5rem;
+    }
+    #topic-container{
+      height: 45rem;
+  }
+    .topic-card{
+      height: 11rem;
+      width: 11rem;
+    }
+    #difficulties{
+      font-size: 1.5rem;
+      width: 27rem;
+      height: 3rem;
+      border-radius: 12px;
+    }
+    #questions{
+      font-size: 1.2rem;
+      width: 27rem;
+      height: 3rem;
+      border-radius: 12px;
+    }
+    form input[type=text]{
+      height: 3rem;
+      margin-top: 1rem;
+    }
+    /* leaderboard page */
+    .highscores-container{
+      width: 60rem;
+      height: 80rem;
+    }
+    thead{
+      font-size: 3rem;
+    }
+    tbody{
+      font-size: 2.5rem;
+    }
   }
 

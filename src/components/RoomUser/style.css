@@ -1,0 +1,12 @@
+.userInRoom {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.userIcon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: inline;
+}

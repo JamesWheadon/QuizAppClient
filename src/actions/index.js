@@ -53,12 +53,11 @@ export const fetchQuestions = (input) => {
 export const sendScore = (userid, username, score) => {
     return async (dispatch) => {
         try {
-            await axios.put(`${apiUrl}/quizzes/${userid}/users/${username}`, { highscore: score })
+            await axios.put(`${apiUrl}/quizzes/${userid}/users/${username}`, { score })
             let { data } = await axios.get(`${apiUrl}/users/${username}`)
             console.log(data)
             let { name, id, highscore } = data
             dispatch(setUser(name, id, highscore, score))
-
         } catch (err) {
             dispatch(error(err))
         }
