@@ -1,46 +1,55 @@
-@media only screen and (max-width: 1024px) {
-    /* Start a quiz page */
-    .room-form{                 
-        font-size: 1.8rem;
-        width: 100%;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .room-form{
+    background-color: red;
+    height: 50rem;
+    width: 60rem;
+    font-size: 2rem;
+    margin-top: 7rem;
+  }
+  .icon-card {
+      position: relative;
+      text-align: center;
+      width: 7rem;
+      height: 7rem;
     }
-    .icon-card {
-        position: relative;
-        text-align: center;
-        width: 7rem;
-        height: 7rem;
-      }
-      .icon-img:hover {
-        width: 9rem;
-        height: 9rem;
-        object-fit: cover;
-        cursor: pointer;
-      }
-      #icon-container {
-        display: flex;
-        flex-flow: column;
-        max-width: 80vw;
-        flex-flow: row wrap;
-        justify-content: center;
-        border-radius: 10px;
-        width: 100%;
-      }
-      #back-button {
-      left: 40%;
-      margin-top:3rem;
-      height: 3rem;
-      }
-      body{
-          width:100%;
-      }
-      form input[type=text] {
-          font-size: 1.5rem;
-          width: 11.2rem;
-      }
-      form button[type=submit] {
-          margin-left: 43%;
-          margin-top: 2rem;
-      }
+    .icon-img:hover {
+      width: 9rem;
+      height: 9rem;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    #icon-container {
+      display: flex;
+      flex-flow: column;
+      max-width: 80vw;
+      flex-flow: row wrap;
+      justify-content: center;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 7rem;
+    }
    
-     
+    form input[type=text] {
+        font-size: 1.5rem;
+        width: 13.8rem;
+    }
+    form button[type=submit] {
+        margin-left: 40%;
+        margin-top: 2rem;
+    }
+    nav {
+      float: none;
+      width: 100%;
+      font-size: 2rem;
+    }
+  }
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .room-form{
+    background-color:black;
+  }
 }
+
