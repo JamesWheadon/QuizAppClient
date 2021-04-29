@@ -7,7 +7,7 @@ const IconCard = ({ icon, selectIcon }) => {
     return (
         <>
             <div className="icon-card" id={icon.id}>
-                <img className={chosenIcon == icon.id ? "icon-img selected" : "icon-img"} src={icon.url} onClick= {()=>selectIcon(icon.id)} tabIndex="0" alt="icons"/>
+                <img className={chosenIcon == icon.id ? "icon-img selected" : "icon-img"} src={icon.url} onClick= {()=>selectIcon(icon.id)} alt="icons"/>
             </div>
 
         </>

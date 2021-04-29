@@ -34,7 +34,6 @@ const QuizForm = ({ handleFormSubmit }) => {
             ...prev,
             [e.target.name]: e.target.value
         }))
-        console.log(input)
     }
 
 

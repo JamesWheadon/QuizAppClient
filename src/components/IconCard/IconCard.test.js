@@ -9,7 +9,7 @@ describe('it should show the icons in a card on the screen', () => {
     beforeEach(() => {
         handleFormSubmit = jest.fn()
         let icon = [{ id: 1, name: 'Ryan', url: 1 }];
-        render(<IconCard icon={icon} selectIcon={handleFormSubmit} />)
+        renderWithReduxProvider(<IconCard icon={icon} selectIcon={handleFormSubmit} />)
     });
 
     test('it should render images', () => {
