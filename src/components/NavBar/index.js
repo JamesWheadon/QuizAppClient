@@ -8,9 +8,9 @@ const NavBar = () => {
             <nav className="nav-links">
                 {/* <img className="nav-logo" src="../../images/Quizards-logo.png" alt=""/> */}
                 <NavLink className="home-link" exact to="/">Home</NavLink>
-                <NavLink activeClassName="active" to="/startquiz">Start A Quiz</NavLink>
+                <NavLink activeClassName="active" to="/startquiz">Start Quiz</NavLink>
                 <NavLink activeClassName="active" to="/highscores">Highscores</NavLink>
-                <BackButton />
+                {/* <BackButton /> */}
             </nav>
     )
 }
