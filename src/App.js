@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { NavBar } from './components';
-import { Home, StartQuiz, Login, Highscores, Quiz, WinnersPage } from './pages';
+import { Home, StartQuiz, Highscores, Quiz, WinnersPage } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
@@ -74,7 +74,6 @@ function App() {
             <main>
                 <Switch>
                     <Route exact path="/"><Home /></Route>
-                    <Route path="/login"><Login /></Route>
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
                     <Route path="/quiz"><Quiz finishQuiz={finishQuiz}/></Route>
