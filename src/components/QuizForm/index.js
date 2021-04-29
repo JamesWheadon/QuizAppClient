@@ -30,10 +30,12 @@ const QuizForm = ({ handleFormSubmit }) => {
     }
 
     const handleChange = e => {
+        console.log(input)
         setInput(prev => ({
             ...prev,
             [e.target.name]: e.target.value
         }))
+        console.log(input)
     }
 
 
