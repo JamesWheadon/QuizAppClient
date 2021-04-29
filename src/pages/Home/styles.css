@@ -1,83 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Righteous&family=Shadows+Into+Light&display=swap');
 
 .home-container {
-    padding: 2vw;
-    border-radius: 20px;
+    max-width: 60vw;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background: var(--page-bg-color);
-    /* width: 840px;
-    padding: 0px;
-    margin: 0px;
-    height: 750px; */
+
 }
+.cls-1{font-size:92.22px;fill:#f2f2f2;stroke:#f2f2f2;font-family:PoorRichard-Regular, Poor Richard;}
+.cls-2{fill:#768095;}
+.cls-3{fill:#737e95;}
+.cls-4{fill:#999;}
 
 .home-container > 
 .welcome-text {
-    float: left;
-    /* position: relative; */
-    /* top: -200px;
-    left:-460px; */
+    text-align: center;
 }
-
 
 .welcome-text > h1 {
-    /* margin-top: 20px; */
+    margin-bottom: 30px;
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 4em;
     text-align: center;
     font-family: Righteous;
-    color: #332717;
+    color: var(--main-text-color);
+}
+.welcome-text > p {
+    background-color: var(--main-bg-color);
+    font-size: 2em;
+    border-radius: 20px;
+    margin: 0.5em;
+    padding: 1em;
 }
 
-.home-container > .main-logo {
-    /* position: relative; */
-    float:  right;
-    max-width: 300px;
-    /* left: 430px;
-    top: -150px; */
+.home-container >.main-logo {
+    margin-bottom: 40px;
+    max-width: 500px;
+
 }
 
 .start-quiz-btn {
     font-size: 3em;
 }
 
-
-
-/* .home-button {
-    position: relative;
-    left: 300px;
-    top: 50px;
-} */
-
-/* .block {
-    display: block;
-    width: 100%;
-    border: none;
-    background-color: #671e14;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    text-transform: uppercase;
-    color: yellow;
-  } */
-
 .block:hover {
     color: white;
 }
 
-/* hr {
-    position: relative;
-    left: 180px;
-    outline-style: solid;
-    color: white;
-    outline-width: 5px;
-} */
-/* 
-.highscore-img {
-    position: relative;
-    left: -00px;
-} */
+
+@media only screen and (max-width:  768px)  {
+    .home-container {
+        max-width: 100%;
+    }
+}

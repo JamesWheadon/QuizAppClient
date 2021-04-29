@@ -34,7 +34,7 @@
     width: 100%;
     margin-top: 25px;
   }
-  .icon-img:active{
+  .icon-img:focus{
     width: 9rem;
     height: 9rem;
     object-fit: cover;

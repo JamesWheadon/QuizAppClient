@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./styles.css";
 import axios from "axios";
+import {apiUrl} from '../../../config/config.js';
 
 import { Leaderboard } from "../../components";
 
@@ -12,7 +13,7 @@ const Highscores = () => {
         async function getUserData() {
             try {
                 const { data } = await axios.get(
-                    `http://localhost:3000/users`
+                    `${apiUrl}/users`
                 )
                 setUserData(data)
             } catch {
@@ -26,17 +27,14 @@ const Highscores = () => {
         event.preventDefault();
     }
     return (
-        <div className="home-container">
-            <div className="highscores-container">
-                <br />
-                <br />
-                {userData 
-                ? <Leaderboard data={userData} /> 
+        <div className="highscores-container">
+            {userData
+                ? <Leaderboard data={userData} />
                 : <div><p>Oops, no highscores yet!</p></div>
-                }
-                <img className="highscore-img" src="../../images/wizard-two.png" alt="wizard" />
-            </div>
+            }
+            {/* <img className="highscore-img" src="../../images/wizard-two.png" alt="wizard" /> */}
         </div>
+
     )
 }
 

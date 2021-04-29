@@ -7,7 +7,7 @@ import { fetchQuestions } from "../../actions";
 import './styles.css'
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
-
+    
     const dispatch = useDispatch();
     const history = useHistory();
     const questions = useSelector(state => state.questions);
@@ -27,7 +27,7 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     const renderUsers = () => {
         return users.map(user =>
-            <RoomUser username={user.name} key={user.id} />
+            <RoomUser user={user} key={user.id} />
         );
     };
 
