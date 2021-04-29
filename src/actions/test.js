@@ -81,7 +81,7 @@ describe('async actions', () => {
         axios.post.mockImplementationOnce(() => Promise.resolve({data:r}));
          
         return store.dispatch(action.addUser("bob"))
-          .then(() => { // return of async actions
+          .then(() => { 
             expect(store.getActions()).toEqual(expectedActions)
           })
       })
@@ -102,7 +102,7 @@ describe('async actions', () => {
         axios.post.mockImplementationOnce(() => Promise.resolve({data:r}));
          
         return store.dispatch(action.fetchQuestions(1))
-          .then(() => { // return of async actions
+          .then(() => { 
             expect(store.getActions()).toEqual(expectedActions)
           })
       })
@@ -124,7 +124,7 @@ describe('async actions', () => {
         axios.get.mockImplementationOnce(() => Promise.resolve({data: r}));
          
         return store.dispatch(action.sendScore(1,"bob", 4))
-          .then(() => { // return of async actions
+          .then(() => { 
             console.log(store.getActions())
             expect(store.getActions()).toEqual(expectedActions)
           })
@@ -142,7 +142,7 @@ describe('async actions', () => {
         axios.get.mockImplementationOnce(() => Promise.resolve({data: r}));
          
         return store.dispatch(action.getAllPlayers(1))
-          .then(() => { // return of async actions
+          .then(() => { 
             console.log(store.getActions())
             expect(store.getActions()).toEqual(expectedActions)
           })
