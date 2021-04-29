@@ -5,7 +5,7 @@ import axios from 'axios';
 jest.mock('axios');
 
 describe('Leadboard', () => {
-    let data = [{ id: 1, name: 'Ryan', highscore: 1 }];
+    let data = [{ id: 1, name: 'Ryan', highscore: 1 }, { id: 2, name: 'Test', highscore: 2 }];
 
     beforeEach(() => {
         render(<Leaderboard data={data} />);
