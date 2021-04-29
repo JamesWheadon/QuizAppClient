@@ -15,8 +15,8 @@
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     },
     "coveragePathIgnorePatterns": [
-        "/node_modules/",
-        "/src/components/index.js"
+      "/node_modules/",
+      "/src/components/index.js"
     ]
   },
   "author": "",

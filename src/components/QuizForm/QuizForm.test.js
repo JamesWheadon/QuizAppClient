@@ -15,30 +15,22 @@ describe('QuizForm', () => {
         const form = screen.getByRole('form')
         expect(form).toBeInTheDocument()
     })
-    /*
+    
     test('it should test three difficulties', () => {
-        const difficultyEasy = screen.getByRole('difficulty')
-        console.log(difficultyEasy)
-        expect(difficultyEasy).toBeInTheDocument()
-        // userEvent.click()
-        const difficultyMedium = screen.getByText('Medium');
-        userEvent.click(difficultyMedium)
-        // expect(handleChange).toHaveBeenCalled()
-        //expect(difficultyMedium).toEqual("Medium")
-        expect(difficultyEasy.pendingProps.value).toEqual("Medium")
+        const difficultySelect = screen.getByRole('difficulty')
+        expect(difficultySelect).toBeInTheDocument()
+        userEvent.selectOptions(difficultySelect, "Medium")
+        expect(difficultySelect.value).toEqual("Medium")
     })
 
-    console.log('testDone')
     test('it should be able to select the number of questions', () => {
         const questionNumber = screen.getByRole('questions')
         expect(questionNumber).toBeInTheDocument()
 
-        const questionChange = screen.getByText('20')
-        userEvent.click(questionChange)
-        expect(questionNumber).toEqual("20")
+        userEvent.selectOptions(questionNumber, "20")
+        expect(questionNumber.value).toEqual("20")
     })
-*/
-    console.log('testDone')
+
     test('it should have a submit button', () => {
         const submitButton = screen.getByRole('button')
         expect(submitButton).toBeInTheDocument()
