@@ -28,12 +28,13 @@ describe('Highscores', () => {
         const userError = await screen.findByText("Oops, no highscores yet!")
         expect(userError).toBeInTheDocument()
     })
-
+/*
     test('it renders with an image', async () => {
         axios.get.mockResolvedValue({ data: [{ id: 1, name: 'Ryan', highscore: 100 }] });
         render(<Highscores />);
 
         expect(await screen.findByAltText("wizard", {exact: false})).toBeInTheDocument();
     })
+    */
 
 })

@@ -4,7 +4,7 @@ import { screen, render } from '@testing-library/react';
 describe('RoomUser', () => {
 
     beforeEach(() => {
-        render(<RoomUser username={"Steve"}/>);
+        render(<RoomUser user={{name: "Steve", id: "1"}}/>);
     });
 
     test('it renders an h4 tag with text content of Steve', () => {
