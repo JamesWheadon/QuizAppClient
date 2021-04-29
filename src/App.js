@@ -7,7 +7,7 @@ import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
 import "./App.css";
-
+import './Responsiveness.css'
 const socket = io("http://localhost:5001");
 
 function App() {
