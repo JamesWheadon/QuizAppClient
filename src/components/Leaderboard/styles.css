@@ -1,21 +1,74 @@
 .highscores-table {
-    width: 550px;
-    color: white;
-    row-gap: 300px;
-    text-align: center;
-    font-size: 3rem;
-}
-
-.table-input {
-    margin-bottom: 50px;
-}
-
-.top-player {
-    position: relative;
-}
-.top-player > img {
+    border: none;
+    border-spacing: 0;
+    border-radius: 20px;
     width: 100%;
-    top: -100px;
-    left: 0;
-    position: absolute;
+    color: white;
+    font-size: 2rem;
+    overflow-y: scroll;
+    border-collapse: inherit;
 }
+
+.highscores-table > thead {
+    width: 100%;
+    text-align: left;
+    background-color: var(--highlight-color);
+}
+
+.highscores-table .player-header {
+    padding-left: 80px;
+}
+
+
+.highscores-table .player-info {
+    width: 70%;
+    
+}
+
+
+.highscores-table .player-score {
+    text-align: center;
+    
+}
+
+tr:first-child>.player-info, tr:first-child>.player-score {
+    padding-top: 30px;
+}
+
+.player-info .player-icon-container {
+    position: relative;
+    float: left;
+    margin-left: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+    
+    /* text-align: center; */
+}
+
+.player-icon-container > .user-icon {
+    width: 40px;
+}
+
+.player-icon-container > .winner-crown {
+    z-index: 1;
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    width: 35px;
+}
+
+
+.highscores-table th {
+    padding: 30px;
+}
+
+
+
+.highscores-table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+
+
+
