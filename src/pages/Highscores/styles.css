@@ -1,10 +1,7 @@
 
-
-
 .highscores-container {
-    width: 50%;
-    background-color: var(--main-bg-color);
-    padding: 1em;
+    width: 60%;
+    padding: 20px;
     border-radius: 20px;
     max-width: 100%;
     height: 80%;
@@ -12,7 +9,7 @@
 }
 
 .highscores-text {
-    margin: 1em;
+    margin-bottom: 20px;
     text-align: center;
     color: white;
     text-transform: uppercase;
