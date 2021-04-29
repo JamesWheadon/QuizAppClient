@@ -1,5 +1,6 @@
 @media only screen and (max-width: 1024px) {
-    .room-form{
+    /* Start a quiz page */
+    .room-form{                 
         font-size: 1.8rem;
         width: 100%;
     }
@@ -26,16 +27,20 @@
       }
       #back-button {
       left: 40%;
+      margin-top:3rem;
+      height: 3rem;
       }
       body{
           width:100%;
       }
       form input[type=text] {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           width: 11.2rem;
       }
       form button[type=submit] {
-          margin-left: 45%;
+          margin-left: 43%;
+          margin-top: 2rem;
       }
+   
      
 }
