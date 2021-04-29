@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavBar } from './components';
 import { Home, StartQuiz, Highscores, Quiz, WinnersPage } from './pages';
 import { Header, Footer } from './layout';
@@ -14,8 +14,10 @@ function App() {
     const [users, setUsers] = useState([])
     const [messages, setMessages] = useState([])
     const [finished, setFinished] = useState([]);
-
+    const [done, setDone] = useState(false);
+    
     const dispatch = useDispatch();
+    const userData = useSelector(state => state.user);
 
     socket.on('admin-message', msg => console.log(msg));
 
@@ -33,9 +35,15 @@ function App() {
 
 
     const finishQuiz = () => {
+        
+        setDone(true);
+        
         console.log("Finishing quiz!");
-        socket.emit('finish-quiz');
     }
+
+    useEffect(() => {
+        if(done) socket.emit('quiz-finished', userData);
+    }, [done]);
 
     socket.on('all-players', data => setUsers(data));
 
@@ -61,12 +69,14 @@ function App() {
         window.alert('This username is already taken');
     })
 
-    socket.on('player-done', (user) => {
+    socket.on('player-score', (user) => {
         console.log("Someone finished!");
         let copy = [...finished];
         copy.push(user);
         setFinished(copy);
     })
+
+    // console.log(finished);
 
     return (
         <>
@@ -79,7 +89,7 @@ function App() {
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
                     <Route path="/quiz"><Quiz finishQuiz={finishQuiz} /></Route>
-                    <Route path="/winners"><WinnersPage users={users} finished={users.length === finished.length} /></Route>
+                    <Route path="/winners"><WinnersPage users={finished} finished={users.length === finished.length} /></Route>
                 </Switch>
             </main>
             {/* <Footer /> */}
