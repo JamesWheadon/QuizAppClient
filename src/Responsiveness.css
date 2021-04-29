@@ -2,9 +2,8 @@
 @media only screen and (max-device-width: 1025px) {
   /* Start a quiz page */
   .room-form{
-    background-color: blueviolet;
     height: 50rem;
-    width: 60rem;
+    width: 58rem;
     font-size: 2rem;
     margin-top: 7rem;
   }
@@ -29,6 +28,7 @@
       border-radius: 10px;
       width: 100%;
       margin-top: 7rem;
+      margin-left: 1rem;
     }
    
     form input[type=text] {
@@ -68,11 +68,11 @@
 @media only screen and (max-device-width: 420px) {
   /* Start a quiz page */
   .room-form{
-    background-color: red;
     height: 50rem;
-    width: 60rem;
-    font-size: 2rem;
+    width: 57rem;
+    font-size: 1.8rem;
     margin-top: 7rem;
+    font-weight: bolder;
   }
   .icon-card {
       position: relative;
