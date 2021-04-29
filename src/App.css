@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --main-bg-color: #2b253d;
+    --page-bg-color: #171420;
+    --main-text-color: white;
+    --main-btn-color: white;
+    --highlight-color: #dbd58f;
+    --nav-color: #61142b;
+    --nav-height: 10vh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    /* overflow: hidden; */
+}
+
+body {
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    min-height: 100vh;
+}
+
+#root {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+header {
+    flex: 0 1 auto;
+}
+
+main {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    /* width: 80vw; */
+    padding: 4vh;
+    /* font-size: 1rem; */
+    background: var(--page-bg-color);
+    color: var(--main-text-color);
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 20px;
+    box-shadow: 0 0 16px 16px rgba(0, 0, 0, 0.171);
+}
+
+/* COMMON ELEMENTS */
+
+button {
+    transition: all 0.2s;
+    background: var(--main-btn-color);
+    border: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.8em;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+    backface-visibility: hidden;
+    transform: scale(1.05);
+    color: black;
+}
+
+form {
+    padding: 20px;
+}
+
+form label {
+    margin: 10px 20px
+}
+
+form input[type=text], form input[type=select], form button[type=input] {
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0.8em;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--nav-color);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+  }

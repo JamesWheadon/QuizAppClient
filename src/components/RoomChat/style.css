@@ -1,0 +1,22 @@
+#roomChat {
+    height: 100%;
+    border: 2px solid yellow;
+    color: white;
+}
+
+.chat-messages {
+    min-height: 70%;
+}
+
+
+#roomChat> form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#roomChat> form label{
+    margin: 0;
+}
+

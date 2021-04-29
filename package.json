@@ -4,8 +4,8 @@
   "description": "* Emmanueal\r * Faisal\r * James\r * Rishi\r * Ryan",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --setupFilesAfterEnv ./src/test/setupTests.js",
-    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent --watchAll=false",
+    "test": "jest --watch --verbose --setupFilesAfterEnv ./src/test/setupTests.js",
+    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent",
     "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
     "build": "webpack --config config/webpack.config.production.js"
   },
@@ -32,14 +32,18 @@
     "html-webpack-plugin": "^5.3.1",
     "jest": "^26.6.3",
     "style-loader": "^2.0.0",
-    "webpack": "^5.32.0",
+    "webpack": "^5.36.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "socket.io-client": "^4.0.1"
   }
 }

@@ -1,0 +1,115 @@
+/* Ipads */
+@media only screen and (max-device-width: 1025px) {
+  /* Start a quiz page */
+  .room-form{
+    background-color: blueviolet;
+    height: 50rem;
+    width: 60rem;
+    font-size: 2rem;
+    margin-top: 7rem;
+  }
+  .icon-card {
+      position: relative;
+      text-align: center;
+      width: 7rem;
+      height: 7rem;
+    }
+    .icon-img:hover {
+      width: 9rem;
+      height: 9rem;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    #icon-container {
+      display: flex;
+      flex-flow: column;
+      max-width: 80vw;
+      flex-flow: row wrap;
+      justify-content: center;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 7rem;
+    }
+   
+    form input[type=text] {
+        font-size: 1.9rem;
+        width: 13.8rem;
+    }
+    form button[type=submit] {
+        margin-left: 40%;
+        margin-top: 2rem;
+    }
+    nav {
+      float: none;
+      width: 100%;
+      font-size: 2rem;
+    }
+     /* Waiting room page */
+    .waiting-room {
+      height: 70rem;
+      margin-top: -7rem;
+    }
+    .room-users {
+      height: 20rem;
+      width: 15rem;
+      background-color: blueviolet;
+    }
+    .room-chat {
+      background-color: burlywood;
+    }
+    .room-quiz-form {
+      background-color: chartreuse;
+    }
+    .quiz-form{
+      background-color: cyan;
+    }
+}
+/* Phones */
+@media only screen and (max-device-width: 420px) {
+  /* Start a quiz page */
+  .room-form{
+    background-color: red;
+    height: 50rem;
+    width: 60rem;
+    font-size: 2rem;
+    margin-top: 7rem;
+  }
+  .icon-card {
+      position: relative;
+      text-align: center;
+      width: 7rem;
+      height: 7rem;
+    }
+    .icon-img:hover {
+      width: 9rem;
+      height: 9rem;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    #icon-container {
+      display: flex;
+      flex-flow: column;
+      max-width: 80vw;
+      flex-flow: row wrap;
+      justify-content: center;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 7rem;
+    }
+   
+    form input[type=text] {
+        font-size: 1.5rem;
+        width: 13.8rem;
+    }
+    form button[type=submit] {
+        margin-left: 40%;
+        margin-top: 5rem;
+    }
+    nav {
+      float: none;
+      width: 100%;
+      font-size: 2rem;
+    }
+    /* Waiting room page */
+  }
+
