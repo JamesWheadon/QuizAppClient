@@ -1,22 +1,23 @@
 import React from 'react';
-// import "./images/crown.png";
+import { icons } from "../../images/userIcons";
 import "./styles.css";
 
-const Leaderboard = ({ data }) => {
-
+const Leaderboard = ({ data, showIcons }) => {
     let leaderboardData = Array.isArray(data) && data
         .sort((a, b) => { return b.highscore - a.highscore })
-        .map((g, i) => {
+        .map((u, i) => {
             return (
-                <tr key={g.id}>
-                    <td key={`icon-${g.id}`}
-                        className={`${i === 0 ? "top-player" : ""}`}
+                <tr key={u.id}>
+                    <td className="player-info" key={`name-${u.id}`}
                     >
-                    {i === 0 && <img src="/images/crown.png" />}
-                        whale
-                      </td> 
-                    <td key={`name-${g.id}`}>{g.name}</td>
-                    <td key={`hs-${g.id}`}>{g.highscore * 100}%</td>
+                        {showIcons &&
+                            <div className="player-icon-container">
+                                { i === 0 && <img className="winner-crown" src={'images/crowns.png'} />}
+                                {<img className="user-icon" src={icons.find(icon => u.icon == icon.id).url || ""} />}
+                            </div>}
+                        <p className="leaderboard-name">{u.name}</p>
+                    </td>
+                    <td className="player-score" key={`hs-${u.id}`}>{u.highscore * 100}%</td>
                 </tr>
             )
         })
@@ -27,9 +28,8 @@ const Leaderboard = ({ data }) => {
             <table role="table" className="highscores-table">
                 <thead key="header">
                     <tr key="header columns">
-                        <th key="nickname">Nickname</th>
-                        <th key="score">Score</th>
-                        <th key="icon">Icon</th>
+                        <th key="player" className="player-header">Player</th>
+                        <th key="score" className="player-score">Score</th>
                     </tr>
                 </thead>
                 <tbody key="leaderboard">
