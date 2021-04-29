@@ -1,4 +1,4 @@
-/* Large devices (laptops/desktops, 992px and up) */
+/* Ipads */
 @media only screen and (max-device-width: 1025px) {
   /* Start a quiz page */
   .room-form{
@@ -45,8 +45,26 @@
       font-size: 2rem;
     }
      /* Waiting room page */
+    .waiting-room {
+      height: 70rem;
+      margin-top: -7rem;
+    }
+    .room-users {
+      height: 20rem;
+      width: 15rem;
+      background-color: blueviolet;
+    }
+    .room-chat {
+      background-color: burlywood;
+    }
+    .room-quiz-form {
+      background-color: chartreuse;
+    }
+    .quiz-form{
+      background-color: cyan;
+    }
 }
-/* Medium devices (landscape tablets, 768px and up) */
+/* Phones */
 @media only screen and (max-device-width: 420px) {
   /* Start a quiz page */
   .room-form{
