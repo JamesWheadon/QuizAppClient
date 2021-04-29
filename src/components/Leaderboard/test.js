@@ -15,7 +15,7 @@ describe('Leadboard', () => {
     test('it renders with a table with nicknames and highscores', () => {
         expect(screen.getByRole('heading', { name: 'Leaderboard' })).toBeInTheDocument();
         expect(screen.getByText('Score')).toBeInTheDocument();
-        expect(screen.getByText('Nickname')).toBeInTheDocument();
+        expect(screen.getByText('Player')).toBeInTheDocument();
 
     })
 
