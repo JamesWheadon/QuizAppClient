@@ -1,33 +1,54 @@
 import axios from 'axios';
-import * as actions from './index';
+import * as action from './index';
+import thunk from 'redux-thunk'
+import configureMockStore from 'redux-mock-store'
+
+const middlewares = [thunk]
+const mockStore = configureMockStore(middlewares)
+
 jest.mock('axios');
 
 describe('question actions', () => {
 
-    afterEach(() => {
-        fetchMock.reset()
-        fetchMock.restore()
+    const initState = {
+    }
+
+    const store = mockStore(initState)
+
+    beforeEach(() => {
+        store.clearActions()
     })
 
-    it('Dispatches LOAD_USER after fetching users', () => {
+
+    it('Dispatches LOAD_USER action', () => {
         // Response body sample
-        const response = 
+        const r = 
             {
                 id: 1,
                 name: 'bob',
-                highscore: '100'
+                highscore: 100,
+                score: 0
             }
 
-        fetchMock.getOnce('/books',
-                { body: { results: response }})
-
         const expectedActions = [
-         { type: booksActions.BOOKS_REQUEST, payload: undefined},
-         { type: booksActions.BOOKS_SUCCESS, payload: { results: response}}
+            { type: 'LOAD_USER', payload: r }
         ]
-        store.dispatch(booksActions.getBooks())
-             .then(() => {
-                 expect(store.getActions()).toEqual(expectedActions)
-             })
+        store.dispatch(action.setUser("bob", 1, 100))
+        const actions = store.getActions()
+        console.log(actions)
+        expect(store.getActions()).toEqual(expectedActions)
+             
+    })
+
+    it('Dispatches UPDATE_SCORE action', () => {
+        
+        const expectedActions = [
+            { type: 'UPDATE_SCORE' }
+        ]
+        store.dispatch(action.updatePlayerScore())
+        const actions = store.getActions()
+        console.log(actions)
+        expect(store.getActions()).toEqual(expectedActions)
+             
     })
 })
