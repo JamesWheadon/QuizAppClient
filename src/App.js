@@ -78,7 +78,7 @@ function App() {
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
                     <Route path="/quiz"><Quiz finishQuiz={finishQuiz}/></Route>
-                    <Route path="/winners"><WinnersPage finished={users.length === finished.length}/></Route>
+                    <Route path="/winners"><WinnersPage users={users} finished={users.length === finished.length}/></Route>
                 </Switch>
             </main>
             <Footer />
