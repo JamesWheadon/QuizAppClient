@@ -30,10 +30,12 @@ const QuizForm = ({ handleFormSubmit }) => {
     }
 
     const handleChange = e => {
+        console.log(input)
         setInput(prev => ({
             ...prev,
             [e.target.name]: e.target.value
         }))
+        console.log(input)
     }
 
 
@@ -71,7 +73,7 @@ const QuizForm = ({ handleFormSubmit }) => {
         )
     })
     return (
-        <form className="quiz-form" action="" method="get" onSubmit={handleSubmit}>
+        <form role="form" className="quiz-form" action="" method="get" onSubmit={handleSubmit}>
             <div id="topic-container">
                 {topicsList}
             </div>
@@ -80,7 +82,7 @@ const QuizForm = ({ handleFormSubmit }) => {
                 <label htmlFor="difficulties">Difficulty:</label>
             {/* </div> */}
             {/* <div className="options"> */}
-                <select id="difficulties" name="difficulty"
+                <select role="difficulty" id="difficulties" name="difficulty"
                     value={input.difficulty} onChange={handleChange}>
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
@@ -91,7 +93,7 @@ const QuizForm = ({ handleFormSubmit }) => {
                 <label htmlFor="questions">Number of Questions:</label>
             {/* </div> */}
             {/* <div className="options"> */}
-                <select id="questions" name="length"
+                <select role="questions" id="questions" name="length"
                     value={input.length} onChange={handleChange}>
                         {/* for easier debug */}
                     <option value="2" >2</option> 

@@ -29,5 +29,29 @@ describe('questions reducer', () => {
         expect(fakeLoadQuestions.questions).toMatchObject([{question: "dummy", correct_answer: "aha", incorrect_answers :["blaa"]}])
     })
 
+    test('it returns with icon info added to user', () => {
+        let icon = "test"
+        const fakeLoadIcon = questionsReducer(
+            { user: {name: "", id: 0, score: 0, highscore: 0 } },
+            { type: 'LOAD_ICON', payload: icon})
+        expect(fakeLoadIcon.user).toMatchObject({name: "", id: 0, score: 0, highscore: 0, icon:"test" } )
+    })
+
+    test('it returns with players array', () => {
+        let p = ["testp"]
+        const fakeAddedPlayers = questionsReducer(
+            { players: [] },
+            { type: 'ADD_PLAYERS', payload: p})
+        expect(fakeAddedPlayers).toMatchObject({players:p} )
+    })
+
+    test('it returns with erro set', () => {
+        let err= { message : "message"}
+        const fakeError = questionsReducer(
+            { error: false },
+            { type: 'SET_ERROR', payload: err.message })
+        expect(fakeError).toMatchObject({error: err.message} )
+    })
+
 
 });

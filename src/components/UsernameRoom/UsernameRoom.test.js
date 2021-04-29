@@ -1,6 +1,7 @@
 import { default as UsernameRoom } from '.';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import * as actions from '../../actions';
 
 describe('UsernameRoom', () => {
     let joinRoom;
@@ -8,7 +9,7 @@ describe('UsernameRoom', () => {
 
     beforeEach(() => {
         joinRoom = jest.fn();
-        setIcon = jest.fn();
+        setIcon = jest.spyOn(actions, 'setIcon');
         let initState = {
             questions: [ {question: "", correct_answer: "", incorrect_answers :[] } ],
             quiz: {},
