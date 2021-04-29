@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { NavBar } from './components';
-import { Home, StartQuiz, Login, Highscores, Quiz, WinnersPage } from './pages';
+import { Home, StartQuiz, Highscores, Quiz, WinnersPage } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
 
@@ -31,7 +31,7 @@ function App() {
         socket.emit('quiz-start', questions);
     }
 
-    
+
     const finishQuiz = () => {
         console.log("Finishing quiz!");
         socket.emit('finish-quiz');
@@ -39,7 +39,7 @@ function App() {
 
     socket.on('all-players', data => setUsers(data));
 
-    socket.on('quiz-questions', ({questions, quiz}) => {
+    socket.on('quiz-questions', ({ questions, quiz }) => {
         dispatch({
             type: 'LOAD_QUESTIONS',
             payload: { questions, quiz }
@@ -69,20 +69,21 @@ function App() {
     })
 
     return (
-        <div id="app">
-            <Header />
+        <>
+            <header>
+                <NavBar role="navigation" />
+            </header>
             <main>
                 <Switch>
                     <Route exact path="/"><Home /></Route>
-                    <Route path="/login"><Login /></Route>
                     <Route path="/startquiz"><StartQuiz joinRoom={joinRoom} sendMessage={sendMessage} users={users} messages={messages} quizStart={quizStart} /></Route>
                     <Route path="/highscores"><Highscores /></Route>
-                    <Route path="/quiz"><Quiz finishQuiz={finishQuiz}/></Route>
-                    <Route path="/winners"><WinnersPage users={users} finished={users.length === finished.length}/></Route>
+                    <Route path="/quiz"><Quiz finishQuiz={finishQuiz} /></Route>
+                    <Route path="/winners"><WinnersPage users={users} finished={users.length === finished.length} /></Route>
                 </Switch>
             </main>
-            <Footer />
-        </div>
+            {/* <Footer /> */}
+        </>
     )
 }
 
