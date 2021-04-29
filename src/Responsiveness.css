@@ -44,25 +44,50 @@
       width: 100%;
       font-size: 2rem;
     }
-     /* Waiting room page */
-    /* .waiting-room {
-      height: 70rem;
-      margin-top: -7rem;
+    .waiting-room {
+      height: 55rem;
+      margin-top: 0.5rem;
+      width: 51rem;
     }
     .room-users {
-      height: 20rem;
-      width: 15rem;
-      background-color: blueviolet;
-    }
+      height: 25.5rem;
+      width: 19.3rem;
+      font-size: 1.5rem; 
+      }
     .room-chat {
-      background-color: blue;
-    }
-    .room-quiz-form {
-      background-color: chartreuse;
+       font-size: 1.2rem;
     }
     .quiz-form{
-      background-color: cyan;
-    } */
+      font-size: 1.4rem;
+      height: 54rem;
+    }
+    [role=form] {
+      margin-top: -3.1rem;
+      font-size: 1.2rem;
+    }
+    #topic-container{
+      height: 45rem;
+  }
+    .topic-card{
+      height: 11rem;
+      width: 11rem;
+    }
+    #difficulties{
+      font-size: 1.5rem;
+      width: 27rem;
+      height: 3rem;
+      border-radius: 12px;
+    }
+    #questions{
+      font-size: 1.2rem;
+      width: 27rem;
+      height: 3rem;
+      border-radius: 12px;
+    }
+    form input[type=text]{
+      height: 3rem;
+      margin-bottom: -3rem;
+    }
 }
 /* Phones */
 @media only screen and (max-device-width: 420px) {
@@ -130,7 +155,7 @@
     }
     [role=form] {
       /* background-color: wheat; */
-      margin-top: -5.1rem;
+      margin-top: -5.5rem;
       font-size: 1.5rem;
     }
     #topic-container{
@@ -151,6 +176,10 @@
       width: 27rem;
       height: 3rem;
       border-radius: 12px;
+    }
+    form input[type=text]{
+      height: 3rem;
+      margin-top: 1rem;
     }
   }
 
