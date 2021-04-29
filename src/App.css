@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
-    --main-bg-color: #332717;
-    --page-bg-color: #d9a233;
+    --main-bg-color: #2b253d;
+    --page-bg-color: #171420;
     --main-text-color: white;
     --main-btn-color: white;
-    --highlight-color: rgb(44, 31, 228);
+    --highlight-color: #dbd58f;
+    --nav-color: #61142b;
+    --nav-height: 10vh;
 }
 
 * {
@@ -14,6 +17,9 @@
     padding: 0;
 }
 
+html, body {
+    /* overflow: hidden; */
+}
 
 body {
     background-color: var(--main-bg-color);
@@ -23,20 +29,30 @@ body {
     min-height: 100vh;
 }
 
-#root{
+#root {
     min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+header {
+    flex: 0 1 auto;
 }
 
 main {
+    flex: 1 1 auto;
     display: flex;
     justify-content: center;
-    margin: 10vh auto;
-    width: 80vw;
-    max-height: 80vh;
-    font-size: 1rem;
+    margin: 50px;
+    /* width: 80vw; */
+    padding: 4vh;
+    /* font-size: 1rem; */
+    background: var(--page-bg-color);
     color: var(--main-text-color);
-    font-family: 'Noto Sans', sans-serif;
-
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 20px;
+    box-shadow: 0 0 16px 16px rgba(0, 0, 0, 0.171);
 }
 
 /* COMMON ELEMENTS */
@@ -44,7 +60,7 @@ main {
 button {
     transition: all 0.2s;
     background: var(--main-btn-color);
-    border:none;
+    border: none;
     outline: none;
     text-align: center;
     text-decoration: none;
@@ -59,21 +75,38 @@ button:hover {
     background-color: var(--highlight-color);
     backface-visibility: hidden;
     transform: scale(1.05);
-    color: white;
+    color: black;
 }
 
 form {
     padding: 20px;
 }
 
-form label{
+form label {
     margin: 10px 20px
 }
 
-form input[type=text], form input[type=select], form button[type=input]{
+form input[type=text], form input[type=select], form button[type=input] {
     margin-left: 20px;
     border: none;
     outline: none;
     border-radius: 10px;
     padding: 0.8em;
 }
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--nav-color);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color);
+  }
