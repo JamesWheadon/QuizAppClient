@@ -5,7 +5,7 @@
     height: 50rem;
     width: 58rem;
     font-size: 2rem;
-    margin-top: 7rem;
+    padding-top: 7rem;
   }
   .icon-card {
       position: relative;
@@ -30,7 +30,12 @@
       margin-top: 7rem;
       margin-left: 1rem;
     }
-   
+   form label{
+     font-size: 2rem;
+   }
+   #icon-container p{
+     font-size: 2rem;
+   }
     form input[type=text] {
         font-size: 1.9rem;
         width: 13.8rem;
@@ -120,6 +125,12 @@
       border-radius: 10px;
       width: 100%;
       margin-top: 7rem;
+    }
+    form label{
+      font-size: 1.8rem;
+    }
+    #icon-container p{
+      font-size: 1.8rem;
     }
    
     form input[type=text] {
