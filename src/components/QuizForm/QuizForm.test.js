@@ -5,8 +5,10 @@ import QuizForm from '.';
 
 describe('QuizForm', () => {
     
-    let handleFormSubmit = jest.fn()
+    let handleFormSubmit;
     beforeEach(() => {
+        jest.resetAllMocks()
+        handleFormSubmit = jest.fn()
         render(<QuizForm handleFormSubmit={handleFormSubmit}/>)
     });
 
@@ -31,10 +33,22 @@ describe('QuizForm', () => {
         expect(questionNumber.value).toEqual("20")
     })
 
-    test('it should have a submit button', () => {
-        const submitButton = screen.getByRole('button')
-        expect(submitButton).toBeInTheDocument()
-        expect(submitButton.textContent).toEqual(' Start Quiz ')
+    test('it should have a submit button that calls handleSubmit when clicked', () => {
+        const submitButton = screen.getByRole('button');
+        expect(submitButton).toBeInTheDocument();
+        expect(submitButton.textContent).toEqual(' Start Quiz ');
+        userEvent.click(submitButton);
+        expect(handleFormSubmit).toHaveBeenCalled();
+    })
+
+    test('it should have 5 topics to choose which update the state with their category when clicked', () => {
+        const topics = screen.getAllByRole('topic');
+        expect(topics.length).toEqual(5);
+        const clickedTopic = topics[3];
+        userEvent.click(clickedTopic);
+        const submitButton = screen.getByRole('button');
+        userEvent.click(submitButton);
+        expect(handleFormSubmit).toHaveBeenCalledWith({"category": "10", "difficulty": "Easy", "length": 10});
     })
 })
 
