@@ -7,7 +7,7 @@
 
 
 
-Quizards is an online quiz game which uses OpenTrivia API for fetching the questions. Users can join a room  with a name and room code, then create a game. (5 players max). Users can select the difficulty, category and number of questions. At the end of each quiz users are sent to a leaderboards page displaying their score.
+Quizards is an online quiz game which uses OpenTrivia API for fetching questions. Users can join a room  with a name and room code, then create a game. (5 players max). Users can select the difficulty, category and number of questions. At the end of each quiz users are sent to a leaderboards page displaying their score.
 
 
 ### Installation
