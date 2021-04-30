@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { QuizAnswer } from '..';
 
 function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
 
+    const [answers, setAnswers] = useState([]);
+
+    useEffect(() => {
+        setAnswers(shuffle([...wrongAnswers, correctAnswer]));
+    }, [question]);
+
     const renderAnswers = () => {
-        wrongAnswers.push(correctAnswer);
-        const answers = shuffle(wrongAnswers);
-        let i = 0;
-        return answers.map(a =>
-            a === correctAnswer ? <QuizAnswer value={a} correct={true} submitAnswer={submitAnswer} key={i++}/> : 
-            <QuizAnswer value={a} correct={false} submitAnswer={submitAnswer} key={i++}/>
+        return answers.map((a,i) =>
+            a === correctAnswer ? <QuizAnswer value={a} correct={true} submitAnswer={submitAnswer} key={i}/> : 
+            <QuizAnswer value={a} correct={false} submitAnswer={submitAnswer} key={i}/>
         );
     };
 

@@ -23,9 +23,9 @@ const Highscores = () => {
         getUserData()
     }, []);
 
-    const handleUsers = (event) => {
+    /*const handleUsers = (event) => {
         event.preventDefault();
-    }
+    }*/
     return (
         <div className="highscores-container">
             {userData

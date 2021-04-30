@@ -22,20 +22,18 @@ const QuizForm = ({ handleFormSubmit }) => {
     const handleSubmit = e => {
         e.preventDefault()
         handleFormSubmit(input);
-        setInput({
+        /*setInput({
             difficulty: "",
             length: "",
             category: ""
-        });
+        });*/
     }
 
     const handleChange = e => {
-        console.log(input)
         setInput(prev => ({
             ...prev,
             [e.target.name]: e.target.value
         }))
-        console.log(input)
     }
 
 
@@ -69,7 +67,7 @@ const QuizForm = ({ handleFormSubmit }) => {
         }
     ]
     const topicsList = topics.map(topic => {
-        return (<TopicCard key={topic.id} topic={topic} selectCard={handleTopicSelection} />
+        return (<TopicCard key={topic.id} topic={topic} selectCard={handleTopicSelection} selected={input.category}/>
         )
     })
     return (
