@@ -65,6 +65,7 @@
     .quiz-form{
       font-size: 1.4rem;
       height: 54rem;
+      margin-top: 5rem;
     }
     [role=form] {
       margin-top: -3.1rem;
@@ -145,9 +146,10 @@
     }
    
     form input[type=text] {
-        font-size: 1.5rem;
-        width: 13.8rem;
-    }
+      font-size: 1.5rem;
+      width: 90%;
+      margin-bottom: 5rem;
+  }
     form button[type=submit] {
         margin-left: 40%;
         margin-top: 5rem;
@@ -174,6 +176,7 @@
     .quiz-form{
       font-size: 1.4rem;
       height: 74rem;
+      margin-top: 5rem;
     }
     [role=form] {
       /* background-color: wheat; */
