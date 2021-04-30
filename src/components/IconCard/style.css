@@ -3,11 +3,13 @@
   }
   
   .icon-card {
+    transition: all 0.2s;
     position: relative;
     text-align: center;
     width: 9rem;
     height: 9rem;
     border-radius: var(--card-br);  
+    cursor: pointer;
   }
   
   .icon-card  img {
@@ -15,14 +17,10 @@
     width: 7rem;
     height: 7rem;
     object-fit: cover;
-    cursor: pointer;
   }
   
-  .icon-img:hover {
-    width: 9rem;
-    height: 9rem;
-    object-fit: cover;
-    cursor: pointer;
+  .icon-card:hover {
+    transform: scale(1.1);
   }
   #icon-container {
     display: flex;
@@ -34,11 +32,11 @@
     width: 100%;
     margin-top: 25px;
   }
+
   .icon-img:focus{
-    width: 9rem;
-    height: 9rem;
+    transform: scale(1.1);
     object-fit: cover;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.267);
+    box-shadow: 0 0px 8px 8px rgba(36, 80, 116, 0.705);
   }
   
