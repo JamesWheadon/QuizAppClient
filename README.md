@@ -41,22 +41,28 @@ Quizards is an online quiz game  which uses OpenTrivia API for fetching the ques
 
 ### Wins
 
--   Well designed app that’s responsive on desktop, mobile and tablet devices
+-   Well designed app that’s responsive on desktop, mobile and tablet devices.
+-   Over 90% test coverage on client side, and 100% Server side.
 -   Implemented Sockets to handle multiple players.
+-   additional features such as leaderboards and icons successfully fully implemented.
 
 
 ### Challenges
 
--   
--    
+-   Using Socket.io to communicate between web clients
+-   Getting the Redux state to update correctly
+-   Handling bugs
 
 ## Bugs
 
--  
+-  Completed quiz starts again when starting a new quiz.
 
 ## Future Features
 
--   
+-   Start a new quiz from the results page
+-   Live room results during the quiz
+-   Animated chart on results page
+-   Authentication
 
 ## Licence
 
