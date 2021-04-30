@@ -1,22 +1,38 @@
 #roomChat {
     height: 100%;
-    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: white;
 }
 
 .chat-messages {
-    min-height: 70%;
+    padding: 1em;
+    justify-self: start;
+    flex: 1;
+    min-height: 200px;
+    height: 100%;
+    max-height: 40vh;
+    overflow-y: scroll;
 }
 
+.chat-messages p {
+    margin-top: 5px;
+}
 
-#roomChat> form{
+.chat-form {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
     align-items: center;
+    vertical-align: middle;
+    gap: 10px;
 }
 
-#roomChat> form label{
+.chat-form input[type=text],.chat-form button {
+    width: 70%;
+    flex-grow: 1;
+}
+
+.chat-form > form label{
     margin: 0;
 }
-

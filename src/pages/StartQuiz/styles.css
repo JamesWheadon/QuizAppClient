@@ -1,27 +1,51 @@
 .waiting-room {
-    border: 10px dashed red;
+    height: 100%;
     display: grid;
+    gap: 20px;
     grid-template-columns: 30vw 1fr;
     grid-template-rows: 30vh 1fr;
 }
 
+.room-chat, .room-quiz-form, .room-users {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    width: 100%;
+}
 .room-users {
     grid-row: 1;
     grid-column: 1;
     padding: 20px;
- }
- 
- .room-users >h2 {
-     margin-bottom: 20px;
- }
+}
 
- .room-chat {
-     height: 100%;
+.room-users>h2 {
+    margin-bottom: 20px;
+}
+
+.room-chat {
+    align-self: flex-end;
+    height: 100%;
     grid-column: 1/2;
     grid-row: 2/3;
-    
- }
- .room-quiz-form {
+}
+
+.room-quiz-form {
     grid-row: 1/3;
     grid-column: 2;
- }
+}
+
+@media only screen and (max-width: 1024px) {
+    .waiting-room {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .room-chat {
+        height: 100%
+    }
+    .room-quiz-form {
+        width: 100%;
+    }
+
+}

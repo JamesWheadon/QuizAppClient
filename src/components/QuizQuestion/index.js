@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { QuizAnswer } from '..';
+import "./style.css";
 
 function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
 
@@ -10,9 +11,9 @@ function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
     }, [question]);
 
     const renderAnswers = () => {
-        return answers.map((a,i) =>
-            a === correctAnswer ? <QuizAnswer value={a} correct={true} submitAnswer={submitAnswer} key={i}/> : 
-            <QuizAnswer value={a} correct={false} submitAnswer={submitAnswer} key={i}/>
+        return answers.map((a, i) =>
+            a === correctAnswer ? <QuizAnswer value={a} correct={true} submitAnswer={submitAnswer} key={i} /> :
+                <QuizAnswer value={a} correct={false} submitAnswer={submitAnswer} key={i} />
         );
     };
 
@@ -28,8 +29,11 @@ function QuizQuestion({ question, wrongAnswers, correctAnswer, submitAnswer }) {
 
     return (
         <div id="quizQuestion">
-            <h2 dangerouslySetInnerHTML= {{__html: question}}></h2>
-            {renderAnswers()}
+            <h2 dangerouslySetInnerHTML={{ __html: question }}></h2>
+            <div className="answers">
+                {renderAnswers()}
+            </div>
+
         </div>
     );
 };

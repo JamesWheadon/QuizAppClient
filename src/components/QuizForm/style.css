@@ -1,60 +1,36 @@
-* {
-  box-sizing: border-box;
-}
-
 .quiz-form {
+  height: 100%;
   display: flex;
   flex-flow: column;
-  max-width: 80vw;
-  border: 2px solid red;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.quiz-form select, .quiz-form button {
+  width: 100%;
+}
+
+.quiz-form button {
+  margin-top: 5px;
 }
 
 #topic-container {
   display: flex;
   flex-flow: row wrap;
-  gap: 5px;
+  gap: 10px;
   justify-content: center;
   border-radius: 10px;
   width: 100%;
+  font-size: 1em;
 }
 
-
-/* 
-.options {
-  width: 60%;
-  margin-top: 6px;
-} */
-
-/* #difficulties {
-  width: 40%;
-  height: 3rem;
-  background-color: black;
-  color: white;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-} */
-
-/* #questions {
-  width: 40%;
-  height: 3rem;
-  background-color: black;
-  color: white;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-} */
-
-
-/* .card:hover {
-  box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
-  cursor: pointer;
+@media only screen and (max-width: 1024px) {
+  #topic-container {
+    flex-flow: row nowrap;
+    max-height: 30vh;
+    overflow-x: scroll;
+  }
 }
-
-.container {
-  padding: 2px 16px;
-}
-
-.col-25{
-    font-size: 1.3rem;
-} */

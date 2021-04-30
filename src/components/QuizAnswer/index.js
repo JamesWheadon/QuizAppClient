@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.css';
 
 function QuizAnswer({ value, correct, submitAnswer}) {
     return (
-        <button onClick={submitAnswer} value={correct}  dangerouslySetInnerHTML= {{__html: value}}></button>
+        <button className="answer-btn" onClick={submitAnswer} value={correct}  dangerouslySetInnerHTML= {{__html: value}}></button>
     );
 };
 

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Leaderboard } from "../../components";
 import { sendScore } from "../../actions";
 
+import './style.css';
+
 const WinnersPage = ({ users, finished }) => {
     // let quiz = {id: 1, length: 10}
     // let playersData = [
@@ -19,21 +21,22 @@ const WinnersPage = ({ users, finished }) => {
     const quiz = useSelector(state => state.quiz);
     const user = useSelector(state => state.user);
     let playersData = users;
-    
+
     playersData = playersData.map(p => { return { ...p, highscore: p.score / quiz.length } })
 
     useEffect(() => {
         dispatch(sendScore(quiz.id, user.name, user.score));
     }, []);
- 
+
     return (
         <div className="highscores-container">
-            <br />
-            <br />
             {finished
                 ?
                 <Leaderboard data={playersData} showIcons={true} />
-                : <div><p>Waiting for others to finish...</p></div>
+                : <div className="waiting-area">
+                    <p>Waiting for others to finish...</p>
+                    <img src="https://media.giphy.com/media/LWFMH5wQXtkwE/giphy.gif"></img>
+                </div>
             }
             {/* <img className="highscore-img" src="https://media.tenor.com/images/d894ea3155542ede777f6edf39a5f8ea/tenor.gif" alt="winners gif" /> */}
         </div>

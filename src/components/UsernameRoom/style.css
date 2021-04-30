@@ -1,0 +1,29 @@
+.room-form {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.room-form .username-input {
+    margin-left: 35px;
+}
+
+.room-form input {
+    flex: 1;
+    margin-left: 20px;
+}
+
+#icon-container {
+    vertical-align: middle;
+}
+
+.icon-text {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .room-form {
+        justify-content: space-around;
+        text-align: center;
+    }
+}

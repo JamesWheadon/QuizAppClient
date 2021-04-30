@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { UsernameRoom, RoomUser, RoomChat, QuizForm} from '../../components';
+import { UsernameRoom, RoomUser, RoomChat, QuizForm } from '../../components';
 import { fetchQuestions } from "../../actions";
 
 import './styles.css'
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
-   
+
     const dispatch = useDispatch();
     const history = useHistory();
     const questions = useSelector(state => state.questions);
@@ -15,7 +15,7 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     useEffect(() => {
         if (questions.length > 1) {
-            quizStart({questions, quiz});
+            quizStart({ questions, quiz });
             history.push('/quiz');
         }
     }, [questions])
@@ -33,13 +33,13 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
     const renderRoom = () => {
         return (
-            <div className="waiting-room">              
+            <div className="waiting-room">
                 <div className="room-users">
                     <h2>Current Quizards:</h2>
                     {renderUsers()}
                 </div>
-                <div  className="room-chat">
-                <RoomChat sendMessage={sendMessage} messages={messages} />
+                <div className="room-chat">
+                    <RoomChat sendMessage={sendMessage} messages={messages} />
                 </div>
                 <div className="room-quiz-form">
                     <QuizForm handleFormSubmit={handleFormSubmit} />
@@ -49,9 +49,9 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
     }
 
     return (
-        <div>
+        <>
             {users.length === 0 ? <UsernameRoom joinRoom={joinRoom} /> : renderRoom()}
-        </div>
+        </>
     )
 }
 

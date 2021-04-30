@@ -5,10 +5,12 @@ import { NavBar } from './components';
 import { Home, StartQuiz, Highscores, Quiz, WinnersPage } from './pages';
 import { Header, Footer } from './layout';
 import { io } from "socket.io-client";
+import { socketUrl } from "../config/config";
 
 import "./App.css";
-import './Responsiveness.css'
-const socket = io("https://quizards-socket.herokuapp.com/");
+// import './Responsiveness.css'
+// const socket = io("https://quizards-socket.herokuapp.com/");
+const socket = io(socketUrl)
 
 function App() {
     const [users, setUsers] = useState([])
