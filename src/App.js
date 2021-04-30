@@ -70,7 +70,7 @@ function App() {
     })
 
     socket.on('player-score', (user) => {
-        console.log("Someone finished!");
+        console.log(user);
         let copy = [...finished];
         copy.push(user);
         setFinished(copy);
