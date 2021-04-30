@@ -1,6 +1,7 @@
 import React from 'react';
 import { icons } from "../../images/userIcons";
 import "./styles.css";
+import winnerCrown from '../../images/crowns.png'
 
 const Leaderboard = ({ data, showIcons }) => {
     let leaderboardData = Array.isArray(data) && data
@@ -12,7 +13,7 @@ const Leaderboard = ({ data, showIcons }) => {
                     >
                         {showIcons &&
                             <div className="player-icon-container">
-                                { i === 0 && <img className="winner-crown" src={'images/crowns.png'} />}
+                                { i === 0 && <img className="winner-crown" src={winnerCrown} />}
                                 {<img className="user-icon" src={icons.find(icon => u.icon == icon.id).url || ""} />}
                             </div>}
                         <p className="leaderboard-name">{u.name}</p>

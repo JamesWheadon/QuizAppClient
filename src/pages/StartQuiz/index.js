@@ -8,8 +8,6 @@ import './styles.css'
 
 const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
 
-    // users = [{ id: 1, name: "Blob", icon: '1' }]
-
     const dispatch = useDispatch();
     const history = useHistory();
     const questions = useSelector(state => state.questions);

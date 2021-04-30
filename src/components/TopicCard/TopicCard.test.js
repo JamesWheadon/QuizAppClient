@@ -9,7 +9,7 @@ describe('it should have images for the topics, which can be selected', () => {
     beforeEach(() => {
         topic = {id: 1, image: "wizard"}
         selectCard = jest.fn();
-        render(<TopicCard topic={topic} selectCard={selectCard}/>)
+        render(<TopicCard topic={topic} selectCard={selectCard} selected={1}/>)
     })
 
     test('it should have images for the topics', () => {

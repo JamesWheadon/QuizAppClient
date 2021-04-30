@@ -39,9 +39,9 @@ describe('Winners page', () => {
 
         expect(screen.getByText("waiting", { exact: false })).toBeInTheDocument();
     });
-
+/*
     test('it renders with an image', async () => {
         renderWithReduxProvider(<WinnersPage users={initState.players} finished={true} />, { initState });
         expect(await screen.findByAltText("winners gif", { exact: false })).toBeInTheDocument();
-    })
+    })*/
 })

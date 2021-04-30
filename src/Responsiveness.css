@@ -145,9 +145,10 @@
     }
    
     form input[type=text] {
-        font-size: 1.5rem;
-        width: 13.8rem;
-    }
+      font-size: 1.5rem;
+      width: 90%;
+      margin-bottom: 5rem;
+  }
     form button[type=submit] {
         margin-left: 40%;
         margin-top: 5rem;
