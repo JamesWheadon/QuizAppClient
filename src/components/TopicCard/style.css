@@ -36,6 +36,6 @@
   bottom: 0px;
 }
 
-.topic-card:focus .topic-info {
+.chosen .topic-info {
   color: rgb(38, 155, 38);
 }
