@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Righteous&family=Shadows+Into+Light&display=swap');
 
 .home-container {
-    max-width: 60vw;
+    max-width: 100%;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -15,7 +15,17 @@
 
 .home-container > 
 .welcome-text {
-    text-align: center;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    max-width: 70vw;
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    margin: 0.5em;
+    padding: 1em;
 }
 
 .welcome-text > h1 {
@@ -27,26 +37,31 @@
     color: var(--main-text-color);
 }
 .welcome-text > p {
-    background-color: var(--main-bg-color);
+    align-self: flex-end;
+    text-align: center;
     font-size: 2em;
-    border-radius: 20px;
-    margin: 0.5em;
-    padding: 1em;
+}
+.quiz-cat {
+    align-self: flex-end;
+    max-width: 100%;
 }
 
 .home-container >.main-logo {
     margin-bottom: 40px;
-    max-width: 500px;
+    max-width: 600px;
 
 }
 
 .start-quiz-btn {
-    font-size: 3em;
+    font-size: 2em;
+    margin: 20px;
 }
 
 .block:hover {
     color: white;
 }
+
+
 
 
 @media only screen and (max-width:  768px)  {

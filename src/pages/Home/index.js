@@ -18,12 +18,13 @@ const Home = () => {
                     </g>
                 </g>
             </svg>
-            {/* <img className="main-logo" src="../../images/Quizards-logo-small.png" alt="" /> */}
+            
             <div className="welcome-text">
                 {/* <h1>Welcome to Quizards!</h1> */}
                 <p>
                 Compete in a magical quizzing duel against your rival quizards to become the king of all wizards and win the coveted crown prize!
                 </p>
+                <img className="quiz-cat" src="../../images/Quizards-logo-small.png" alt="" />
             </div>
             
             <Link to="/startquiz">

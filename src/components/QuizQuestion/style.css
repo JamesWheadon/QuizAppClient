@@ -1,0 +1,23 @@
+#quizQuestion {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 2em;
+    text-align: center;
+}
+
+#quizQuestion > h2{
+    border-radius: 20px;
+    padding: 2em;
+    background-color: var(--main-bg-color);
+    margin-bottom: 5vh;
+}
+
+.answers {
+    display: flex;
+    flex-flow: row-wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+    
+}
