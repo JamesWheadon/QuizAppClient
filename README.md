@@ -2,7 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<img width="1433" alt="Screenshot 2021-04-30 at 11 20 43" src="https://user-images.githubusercontent.com/55699452/116682557-50c9cd80-a9a6-11eb-87c7-d53642c894cb.png">
+<img width="1422" alt="Screenshot 2021-04-30 at 11 23 35" src="https://user-images.githubusercontent.com/55699452/116682799-9eded100-a9a6-11eb-814d-9a71e1ec55aa.png">
+
 
 
 
