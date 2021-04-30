@@ -3,10 +3,13 @@
 }
 
 .topic-card {
+  transition: all 0.2s;
   position: relative;
   text-align: center;
-  width: 200px;
-  height: 150px;
+  max-width: 250px;
+  max-height: 200px;
+  min-width: 300px;
+  min-height: 100px;
   /* border: 3px solid black; */
   /* background-color: black; */
   border-radius: var(--card-br);
@@ -14,6 +17,10 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.267);
   transition: 0.3s;
   cursor: pointer;
+}
+
+.topic-card:hover {
+  transform: scale(1.05);;
 }
 
 .topic-card  img {
@@ -38,4 +45,8 @@
 
 .topic-card:focus .topic-info {
   color: rgb(38, 155, 38);
+}
+
+@media only screen and (max-width: 1024px) {
+  
 }
