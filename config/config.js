@@ -1,3 +1,4 @@
 module.exports = {
-    apiUrl: "https://quizards-api.herokuapp.com"
+    apiUrl: " http://localhost:3000",
+    socketUrl: "http://localhost:5001"
 }
