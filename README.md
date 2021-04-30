@@ -16,9 +16,9 @@ Quizards is an online quiz game  which uses OpenTrivia API for fetching the ques
 -   Ensure docker is running
 -  Open the terminal and run `bash _scripts/startDev.sh` to start  app
 -   then run the following commands in the terminal: 
-  - `cd client`
-  - `npm install`
-  - `npm run dev`
+    - `cd client`
+    - `npm install`
+    - `npm run dev`
 -   Run `bash _scripts/teardown.sh` to stop and teardown the containers
 
 
