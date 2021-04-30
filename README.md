@@ -12,7 +12,7 @@ Quizards is an online quiz game which uses OpenTrivia API for fetching questions
 
 ### Installation
 
--   Clone or download this repo
+-   Clone or download [this](https://github.com/theduckfliesagain/QuizApp) repo
 
 ### Usage
 
