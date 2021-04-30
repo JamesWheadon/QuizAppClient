@@ -8,7 +8,7 @@ import { io } from "socket.io-client";
 
 import "./App.css";
 import './Responsiveness.css'
-const socket = io("https://quizards-socket.herokuapp.com/");
+const socket = io("http://localhost:5001/");
 
 function App() {
     const [users, setUsers] = useState([])
