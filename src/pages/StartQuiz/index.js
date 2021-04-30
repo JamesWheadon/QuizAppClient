@@ -36,7 +36,9 @@ const StartQuiz = ({ joinRoom, sendMessage, users, messages, quizStart }) => {
             <div className="waiting-room">
                 <div className="room-users">
                     <h2>Current Quizards:</h2>
-                    {renderUsers()}
+                    <div className="users-in-room">
+                        {renderUsers()}
+                    </div>
                 </div>
                 <div className="room-chat">
                     <RoomChat sendMessage={sendMessage} messages={messages} />
