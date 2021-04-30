@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<img width="1433" alt="Screenshot 2021-04-30 at 11 20 43" src="https://user-images.githubusercontent.com/55699452/116682557-50c9cd80-a9a6-11eb-87c7-d53642c894cb.png">
+
+
 
 Quizards is an online quiz game which uses OpenTrivia API for fetching the questions. Users can join a room  with a name and room code, then create a game. (5 players max). Users can select the difficulty, category and number of questions. At the end of each quiz users are sent to a leaderboards page displaying their score.
 
