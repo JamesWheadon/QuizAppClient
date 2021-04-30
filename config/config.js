@@ -1,3 +1,3 @@
 module.exports = {
-    apiUrl: "http://localhost:3000"
+    apiUrl: "https://quizards-api.herokuapp.com"
 }
