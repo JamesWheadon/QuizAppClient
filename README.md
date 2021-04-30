@@ -70,7 +70,7 @@ Quizards is an online quiz game which uses OpenTrivia API for fetching the quest
 
 ### The Team
 
-[Rishi B](https://github.com/theduckfliesagain)
-[emmanuel-sobamowo](https://github.com/emmanuel-sobamowo)
-[JamesWheadon](https://github.com/JamesWheadon)
-[FaisalY12](https://github.com/FaisalY12)
+- [Rishi B](https://github.com/theduckfliesagain)
+- [emmanuel-sobamowo](https://github.com/emmanuel-sobamowo)
+- [JamesWheadon](https://github.com/JamesWheadon)
+- [FaisalY12](https://github.com/FaisalY12)
