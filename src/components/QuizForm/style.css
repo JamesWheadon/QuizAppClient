@@ -18,19 +18,24 @@
 }
 
 #topic-container {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
+  margin: 5px;
   gap: 10px;
   justify-content: center;
   border-radius: 10px;
   width: 100%;
+    max-width: 100%;
   font-size: 1em;
 }
 
 @media only screen and (max-width: 1024px) {
   #topic-container {
-    flex-flow: row nowrap;
+    justify-content:start;
+    flex-flow: row nowrap; 
     max-height: 30vh;
     overflow-x: scroll;
+    overflow-y: hidden;
   }
 }

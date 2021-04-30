@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './styles.css'
+import wizardCat from '../../images/Quizards-logo-small.png';
 
 const Home = () => {
 
@@ -24,7 +25,7 @@ const Home = () => {
                 <p>
                 Compete in a magical quizzing duel against your rival quizards to become the king of all wizards and win the coveted crown prize!
                 </p>
-                <img className="quiz-cat" src="../../images/Quizards-logo-small.png" alt="" />
+                <img className="quiz-cat" src={wizardCat} alt="Wizard cat" />
             </div>
             
             <Link to="/startquiz">

@@ -21,6 +21,13 @@
     margin-bottom: 20px;
 }
 
+.users-in-room {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    overflow-x: scroll;
+}
+
 .room-chat {
     align-self: flex-end;
     height: 100%;
