@@ -33,7 +33,7 @@
     margin-top: 25px;
   }
 
-  .icon-img:focus{
+  .icon-card .selected{
     transform: scale(1.1);
     object-fit: cover;
     cursor: pointer;
