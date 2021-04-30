@@ -4,7 +4,7 @@ import { addUser, setIcon } from "../../actions";
 import { icons } from "../../images/userIcons";
 import { IconCard } from '../index'
 
-
+import './style.css'
 
 function UsernameRoom({ joinRoom }) {
 
@@ -48,14 +48,14 @@ function UsernameRoom({ joinRoom }) {
         <form className="room-form" onSubmit={handleSubmit} role="form">
 
             <label>Username
-                <input type="text" value={username} onChange={updateUsernameInput} />
+                <input className="username-input" type="text" value={username} onChange={updateUsernameInput} />
             </label>
             <label>Room code
                 <input type="text" value={room} onChange={updateRoomInput} />
             </label>
-
+            <p className="icon-text">Select an Icon:</p>
             <div id="icon-container">
-                <p>Select an Icon:</p>
+                
                 {iconsList}
             </div>
             <button type="submit">Join Room</button>
